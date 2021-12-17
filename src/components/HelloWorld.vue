@@ -172,14 +172,17 @@
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/46.embed" height="525" width="100%"></iframe>
       </div>
       <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="100%" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
       </div>
       <div style="width: 100%;margin: 0 auto;">
         <iframe width="100%" height="500" style="border:none;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
       </div>
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/53.embed" height="525" width="100%"></iframe>
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe>
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
     </div>
-    <div style="width: 100%;margin: 0 auto;">
-      <iframe width="100%" height="500" style="border:none;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
+    <div style="width: 100%;margin: 0 auto;max-width: 6000px;">
+      <iframe width="100%" height="525" style="border:none;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
     </div>
   </div>
 </template>
