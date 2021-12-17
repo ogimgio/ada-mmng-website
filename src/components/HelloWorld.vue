@@ -2,7 +2,7 @@
   <div style=" text-align: justify;">
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-      <div style="text-align: center; font-style: italic">
+      <div style="text-align: center; font-style: italic;font-weight: bold">
       Is it possible to analyze politics starting exclusively from the politicians' quotations? <br>
       Is it possible to extract significant information that allows us to extract meaningful insights about American politics?</div><br><br>
       Follow us along on our journey where we apply data analysis techniques to better understand political trends of the past 5 years.<br><br>
@@ -20,7 +20,7 @@
     </div>
     <!--<Introduction ref="introduction"/>-->
     <Capitolo1 id="exploration"/>
-    <div class="col-12" ref="introduction" style="margin-right: auto;
+    <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 0px;max-width: 850px;">
       <h4>The model in numbers</h4>
       The most important question: Can the model understand something? And how good are its predictions?<br>
@@ -43,8 +43,8 @@
 
       First we'll look into how often we misclassify speakers. Let's plot how many speakers we misclassify and see if that is correlated with the number of quotes a speaker has attributed to them.
 
-      <div style="margin: 25px 0 25px 0;text-align: center;max-width: 80%;">
-        <img  style="margin: auto" width="80%" :src="require('@/assets/images_nicky/Distribution_nb_quotes_misclassified_speaker.png')" alt="distribution"/>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+        <img  style="margin: auto" width="65%" :src="require('@/assets/images_nicky/img_3.jpeg')" alt="distribution"/>
       </div>
       Taking a closer look, we realize that 13% of our misclassified politicians have only one quote associated. Here's a graph of speaker predictions with only 1 quote. (like on the previous graph you can mouse over quotes to see what they say):<br>
       <div style="width: 100%;margin: 0 auto;">
@@ -88,8 +88,8 @@
       community, health, country, city, new. For the exclusively republican we find instead: american, government, trump and states.
       With the exception of the word 'new' these words are extremely significant for the vision of parties:
       on the one hand they are words related to the homeland and patriotism (Democrats) while on the other hand they are words related to the community, people and health (Republicans).
-      <div style="margin: 25px 0 25px 0;text-align: center">
-      <img width="80%" :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
+      <div style="margin: 25px 0 25px 0px;text-align: center">
+      <img width="70%" :src="require('@/assets/graphs/bro.png')" alt="words(unique)"/>
       </div>
       Now let's look at the words that are shared by several areas at the same time. Here, too, the speech just made is significantly reflected, in fact,
       although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
@@ -105,11 +105,11 @@
       in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)<br><br>
       Now that we have seen the models particularity, lets look at the the distribution of the political score of all the politician on our dataset.
     </div>
-    <div class="col-12" ref="introduction" style="margin-right: auto;
+    <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 10px 0 0 0;max-width: 1050px;">
         <img width="1162" height="450" :src="require('@/assets/images_nicky/mados.jpeg')" alt="distribuition_scores"/>
       </div>
-    <div class="col-12" ref="introduction" style="margin-right: auto;
+    <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 10px 15px 75px;max-width: 850px;">
       Finally lets show the political score of some of the most famous american politicians:
       <div style="width: 100%;margin: 0 auto;">
@@ -117,8 +117,8 @@
       </div>
     </div>
     <UseModel id="model"/>
-    <div class="col-12" ref="introduction" style="margin-right: auto;
-    margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
+    <div class="col-12" style="margin-right: auto;
+    margin-left: auto;padding: 50px 15px 20px;max-width: 850px;">
       Let's now use the time series to perform some interesting analysis:<br>
       For example, we could be interested in the temporal variation of the political vision of various politicians. This way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized overtime or who is the Democrat who is taking increasingly moderate positions. To do this we fit linear regressions to the time series of the 10 most influential politicians for the two parties. The results are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show a single politician just click on his name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
       <br><br>
@@ -135,20 +135,26 @@
       Performing the analysis on the set of words ['climate','change'], we find the following:<br>
       First of all, let's plot the distribution of the political scores of both parties on the topic:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
-        <img  width="80%" :src="require('@/assets/images_nicky/Distribution_Climate_change.png')" alt="distribution"/>
+        <img  width="60%" :src="require('@/assets/images_nicky/img_2.jpeg')" alt="distribution"/>
       </div>
       The distribution shows us that the democrats generally all have the same opinion on the subject whereas the republican party is very undecided.<br><br>
 
       To understand the parties's opinion on the subject, let's show some quotes that are close to the party's median political score on the subject.<br>
-      <div style="width: 100%;margin: 0 auto; max-width: 900px">
+    </div>
+    <div class="col-12" style="margin-right: auto;
+    margin-left: auto;padding: 0px 15px 75px;max-width: 1000px;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/44.embed" height="525" width="100%"></iframe>
-      </div><br>
+      <br>
+    </div>
+    <div class="col-12" style="margin-right: auto;
+    margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
       The first thing we see is that the median political score of the republican is not that relevant because the distribution of the party's quotes is more or less uniform. So we will have to find a better way to understand the party's opinion on the topic. However, we can see that around this value, republicans tend to say climate change is not a priority.<br>
       For, the democrats, this analysis is more relevant because the density of quotes around the median political score is high. If we take a closer look we can see that the quotes say that climate change exists and that we must act on it. <br>
       (e.g. "... playing to his green, anti-fossil fuel , climate change crowd, ...")<br>
 
       (e.g "It's abundantly clear that climate change is a matter of life and death")<br>
-
+      median political score
+      of republicans
       Now that we have seen quotes close to the median, let's look at the various opinions both parties have by showing quotes all along the political score axis. To do so, we separate our quotes into 4 intervals:<br>
       <ul style="padding-left: 50px">
         <li>interval 1: political score of quote = [0,0.25[</li>
@@ -175,7 +181,7 @@
       Let's look now at a topic where democrats and republicans are strongly divided: abortion.<br>
       By choosing the same set of words ['abortion','law'] we perform a similar analysis. Before reading the discussion you could try to take conclusion by yourself just by looking the plots. Here are all our results:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
-        <img  width="80%" :src="require('@/assets/images_nicky/Distribution_abortion_law.png')" alt="distribution"/>
+        <img  width="80%" :src="require('@/assets/images_nicky/img_1.jpeg')" alt="distribution"/>
       </div>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe></div><br>
@@ -241,13 +247,6 @@ export default {
       },
     }
   },
-  methods:{
-    scrollMeTo(refName) {
-      var element = this.$refs[refName];
-      var top = element.offsetTop;
-      window.scrollTo(0, top);
-    }
-  }
 }
 </script>
 
