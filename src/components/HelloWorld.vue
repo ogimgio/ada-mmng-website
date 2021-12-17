@@ -37,51 +37,54 @@
       Now that we have an interpretation for this political score that we can keep in mind for future analyses. Notice the large zig-zag on the graph, that is the time-series of Alexandria Ocasio-Cortez. In the first few years she has a high variance and at around 2018 her curve stabilizes and joins the rest of the democrats. In fact, she only became a prominent American politician in 2018, before that she much fewer quotes associated to her, which perfectly explains the high variance before 2018 and that how after that she indeed joins her party trends.<br><br>
 
       <h4>About misclassification and robustness</h4>
-      We know our per-quote accuracy and also that our model functions well for popular politicians who have plenty of quotes to average our predictions over. <br>
-      Naturally, our the next question we ask ourselves is: what are the restrictions we have to impose to make a robust prediction of which party a politician is affiliated to? Note that our model still does perform pretty well without restriction. <br>
-      We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
+      So far we have achieved a decent per-quote accuracy and seen how aggregating the quotes scores for a single politician allows us to accurately classify popular politicians who have plenty of quotes to average our predictions over. <br><br>
+
+      Naturally, our the next question we ask ourselves is: what are the restrictions we have to impose to make a robust prediction of which party a politician is affiliated to? <br><br>
+
+      First we'll look into how often we misclassify speakers. Let's plot how many speakers we misclassify and see if that is correlated with the number of quotes a speaker has attributed to them.
 
       <div style="margin: 25px 0 25px 0;text-align: center;max-width: 80%;">
         <img  style="margin: auto" width="80%" :src="require('@/assets/images_nicky/Distribution_nb_quotes_misclassified_speaker.png')" alt="distribution"/>
       </div>
-      Taking a closer look, we realize that 13% of our misclassified politicians have only one quote associated. We plotted these on the following graph. You can place your mouse over quotes to see what they say:<br>
+      Taking a closer look, we realize that 13% of our misclassified politicians have only one quote associated. Here's a graph of speaker predictions with only 1 quote. (like on the previous graph you can mouse over quotes to see what they say):<br>
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
       </div>
       Among these quotes, we can notice 4 types of quotes:
       <ul style="padding-left: 50px">
-        <li>quotes that lack context (e.g. “ “), please note that the quote are empty because in our preprocessing we perform stop-word removal.</li>
-        <li>quotes that have nothing to do with politics (e.g. “ “)</li>
-        <li>quotes where a politician expresses an opinion that tends to belong more to his opposite party (e.g. “”)</li>
+        <li>quotes that lack context (e.g. “ “). Note that some quotes are empty because our preprocessing removes stop words and that quote must have contained only such (insignificant) words.</li>
+        <li>quotes that have nothing to do with politics (e.g. “Bob earned his spurs“)</li>
         <li>quotes that should be correctly classified but the model failed to do so</li>
       </ul>
       <br>
 
-      The residual 87% of misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the average political score of each misclassified speaker with 95% confidence intervals using bootstrapping:
+      The residual 87% of misclassified quotes have more than one quote. To better visualize the issue, here's a plot of the average political score of each misclassified speaker with 95% confidence intervals using bootstrapping:
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed?showlink=false" height="1000" width="100%"></iframe>
       </div>
-      Here we see that x% of these predictions reside in both labels. So the variance of these speakers predictions is too high. So in conclusion: we need to set a minimum number of quotes to make a robust prediction of a speaker.
+      Here we see that many of the confidence fall on both sides of the graph. Clearly, the variance on the predictions of many of these speakers predictions is too high. Its fair to say that we need to set a minimum number of quotes to make a robust prediction of a speaker.
       <br>
       To decide where to set the cutoff, we calculate the accuracy of our predictions as a function of the number of quotes we have.<br><br>
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/34.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
-      By setting  the minimum required accuracy at x%, we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 5.<br><br>
+      By setting  the minimum required accuracy at 92.5% we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 5.<br><br>
 
       Regarding the accuracy of a prediction with respect to the length of a quote, the plot here below shows that a quote has to have at least four non-stop words.
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/36.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
-      DISCUSS:<br>
-      If we visualize the distribution of the scores of the quotes by separating the two classes, we realize that we can separate them into four parts.
+
+      Next we'll visualize the distribution of the scores of the quotes by separating the two classes.
+
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img  width="80%" :src="require('@/assets/graphs/img_distribution.png')" alt="distribution"/>
       </div>
-      Starting from the left, an exclusively Republican side, then a predominantly republican side, a predominantly democratic one and finally an exclusively democratic one.
+
+      We can see that the are 4 distinct intervals on the graph. Starting from the left, an exclusively Republican side, then a predominantly republican side, a predominantly democratic one and finally an exclusively democratic one. <br>
       Starting from this idea, we took an interest in trending words by section and the result is very interesting and significant.
-      First, let's look at the trending words that are specific to each area:
-      we immediately notice that they are present above all for the exclusive republican and democratic areas. Specifically in the exclusively democratic area we find the following words:
+      First, let's look at the trending words that are specific to each interval:
+      we immediately notice that they are most present for the exclusive republican and democratic intervals. Specifically in the exclusively democratic zone we find the following words:
       community, health, country, city, new. For the exclusively republican we find instead: american, government, trump and states.
       With the exception of the word 'new' these words are extremely significant for the vision of parties:
       on the one hand they are words related to the homeland and patriotism (Democrats) while on the other hand they are words related to the community, people and health (Republicans).
