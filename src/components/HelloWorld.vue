@@ -42,7 +42,10 @@
       <div style="margin: 25px 0 25px 0;text-align: center;max-width: 80%;">
         <img  style="margin: auto" width="80%" :src="require('@/assets/images_nicky/Distribution_nb_quotes_misclassified_speaker.png')" alt="distribution"/>
       </div>
-      Taking a closer look, we realize that 46% of our misclassified politicians have only one quote associated. We plotted these on the following graph. You can place your mouse over quotes to see what they say:
+      Taking a closer look, we realize that 13% of our misclassified politicians have only one quote associated. We plotted these on the following graph. You can place your mouse over quotes to see what they say:<br>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
+      </div>
       Among these quotes, we can notice 4 types of quotes:
       <ul style="padding-left: 50px">
         <li>quotes that lack context (e.g. “ “), please note that the quote are empty because in our preprocessing we perform stop-word removal.</li>
@@ -52,7 +55,7 @@
       </ul>
       <br>
 
-      The residual 64% of misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the average political score of each misclassified speaker with 95% confidence intervals using bootstrapping:
+      The residual 87% of misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the average political score of each misclassified speaker with 95% confidence intervals using bootstrapping:
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed?showlink=false" height="1000" width="100%"></iframe>
       </div>
@@ -94,7 +97,16 @@
       For this reason, if a politician has many associated quotes,
       we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
       By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
-      in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)
+      in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)<br><br>
+      Now that we have seen the models particularity, lets look at the the distribution of the political score of all the politician on our dataset.
+      <div style="margin: 25px 0 25px 0;text-align: center">
+        <img width="1162" height="450" :src="require('@/assets/images_nicky/mados.jpeg')" alt="distribuition_scores"/>
+      </div>
+
+      Finally lets show the political score of some of the most famous american politicians:
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed" height="525" width="100%"></iframe>
+      </div>
     </div>
     <UseModel id="model"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
@@ -130,11 +142,12 @@
       (e.g "")<br>
 
       Now that we have seen quotes close to the median, let's look at the various opinions both parties have by showing quotes all along the political score axis. To do so, we separate our quotes into 4 intervals:<br>
-
-      interval 1: political score of quote = [0,0.25[<br>
-      interval 2: political score of quote = [0,0.5[<br>
-      interval 3: political score of quote = [0,0.75[<br>
-      interval 4: political score of quote = [0.75,0.1]<br>
+      <ul style="padding-left: 50px">
+        <li>interval 1: political score of quote = [0,0.25[</li>
+        <li>interval 2: political score of quote = [0,0.5[</li>
+        <li>interval 3: political score of quote = [0,0.75[</li>
+        <li> interval 4: political score of quote = [0.75,0.1]</li>
+      </ul>
       We then show a sample of the quotes that are within that interval.<br>
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/46.embed" height="525" width="100%"></iframe>
@@ -151,8 +164,14 @@
 
       Let's look now at a topic where democrats and republicans are strongly divided: income tax.<br>
       By choosing the same set of words ['abortion'] we perform a similar analysis. Here are our results:<br>
-      ---PLOT DISTRIBUTION----<br>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+        <img  width="80%" :src="require('@/assets/images_nicky/Distribution_abortion_law.png')" alt="distribution"/>
+      </div>
       --ALL PLOTS---<br>
+      <div style="width: 100%;margin: 0 auto;">
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe></div><br>
+      <div style="width: 100%;margin: 0 auto;">
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/53.embed" height="525" width="100%"></iframe></div><br>
 
       Here we can see that the parties are strongly divided, the political scores of the republicans and democrats quotes are polarized around 0 and 1 respectively. Around the median, which in this case more or less represents the general opinion of the party (see distribution) we see that republicans tend to be anti-abortion whereas democrats tend to be pro-abortion.<br>
       By showing the quotes along the political score axis, we see the typical scores in all the intervals<br>
@@ -163,25 +182,9 @@
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
       <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
-      </div>
-      <div style="width: 100%;margin: 0 auto;">
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed" height="525" width="100%"></iframe>
-      </div>
-      <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
       </div>
-      <div style="width: 100%;margin: 0 auto;">
-        <iframe width="100%" height="500" style="border:none;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
-      </div>
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/53.embed" height="525" width="100%"></iframe>
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe>
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
-    </div>
-    <div style="width: 100%;">
-      <iframe width="100%" height="525" style="border:none;max-width: 1500px;
-
-display: block;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
     </div>
   </div>
 </template>
