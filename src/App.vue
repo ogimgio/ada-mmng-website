@@ -8,7 +8,7 @@
             contain
         ></v-img></a>
         <div class="topnav-right">
-          <a href="#expl">Exploration of results</a>
+          <a href="#exploration">Exploration of results</a>
           <a href="#model">How can we use our model?</a>
         </div>
       </div>
@@ -33,24 +33,26 @@
       <v-card
           flat
           tile
-          class="indigo lighten-1 white--text text-center flex justify-center"
-          style="min-width: 100%;"
+          class=" lighten-1 white--text text-center flex justify-center"
+          style="min-width: 100%; background-color: #2c3e50"
       >
         <v-card-text>
         </v-card-text>
 
-        <v-card-text class="white--text pt-0">
-          <div style="font-style: italic">Authors:<br></div>
-          <div>Gioele Monopoli<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
-          <div class="row">Mauro Leidi<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
-          <div class="row">Micheal Rust<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
-          <div class="row">Nicky Baldwin<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+        <v-card-text class="white--text pt-0" style="text-align: center">
+          <div style="display: inline-block;">
+            <div style="font-style: italic;">Authors:<br></div>
+          <div style="text-align: left">Gioele Monopoli<v-btn class="white--text" icon href="https://www.linkedin.com/in/gioele-monopoli"><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+          <div style="text-align: left">Mauro Leidi<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+          <div style="text-align: left">Micheal Rust<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+          <div style="text-align: left">Nicky Baldwin<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+          </div>
         </v-card-text>
 
         <v-divider></v-divider>
 
         <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>Applied Data Analysis (ADA) - EPFL</strong>
+          {{ new Date().getFullYear() }} — <strong>Applied Data Analysis (ADA) - EPFL</strong><v-btn class="white--text" icon href="https://github.com/epfl-ada/ada-2021-project-mmng"><v-icon size="24px">mdi-github</v-icon></v-btn>
         </v-card-text>
       </v-card>
     </v-footer>
