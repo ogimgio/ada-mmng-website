@@ -23,7 +23,7 @@
     <!--<Introduction ref="introduction"/>-->
     <Capitolo1 id="exploration"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
-    margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
+    margin-left: auto;padding: 50px 15px 0px;max-width: 850px;">
       <h4>The model in numbers</h4>
       The most important question: Can the model understand something? And how good are its predictions?<br>
       On the test set, our model needs 8 quotations to obtain an accuracy greater than 80% on the prediction. In addition, if we try to classify a politician, the accuracy is 98,?%.<br>
@@ -99,10 +99,13 @@
       By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
       in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)<br><br>
       Now that we have seen the models particularity, lets look at the the distribution of the political score of all the politician on our dataset.
-      <div style="margin: 25px 0 25px 0;text-align: center">
+    </div>
+    <div class="col-12" ref="introduction" style="margin-right: auto;
+    margin-left: auto;padding: 10px 0 0 0;max-width: 1050px;">
         <img width="1162" height="450" :src="require('@/assets/images_nicky/mados.jpeg')" alt="distribuition_scores"/>
       </div>
-
+    <div class="col-12" ref="introduction" style="margin-right: auto;
+    margin-left: auto;padding: 10px 15px 75px;max-width: 850px;">
       Finally lets show the political score of some of the most famous american politicians:
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed" height="525" width="100%"></iframe>
@@ -161,7 +164,9 @@
       We observe that the trend is that the lower political score, the more politicians tend to deny the existence of climate change say that we should do nothing about it. Whereas, the higher the political score, the more politicians tend to say that climate change exists and that acting on it is a priority.<br>
 
       Finally, we plot the average political score of the politicians by averaging their quotes. This allows us to see where a politician stands on the subject and how divided a party is. The democratic party tends to all agree that climate change exists and that we should act on it. On the other hand, Republicans are divided on the subject. Some tend to agree with democrats, and others strongly disagree and deny their existence.<br>
-
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
+      </div>
       Let's look now at a topic where democrats and republicans are strongly divided: income tax.<br>
       By choosing the same set of words ['abortion'] we perform a similar analysis. Here are our results:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
@@ -181,9 +186,6 @@
       INTERVAL4 QUOTE: (e.g. "... it's time to pass state laws to protect womans 's constitutional right of abortion...")<br>
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
-      <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
-      </div>
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
     </div>
   </div>
