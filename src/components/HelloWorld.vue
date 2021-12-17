@@ -98,11 +98,6 @@
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
-<<<<<<< HEAD
-=======
-
-      OVER TIME (MAURO):
->>>>>>> c27c5ee61eacfc2e2470573c73d4c07c8d902d5d
       We showed that the model is able to accurately classify the political party to which a politician belongs and that 4 quotations are sufficient for this purpose.
       For this reason, if a politician has many associated quotes,
       we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
@@ -206,6 +201,21 @@
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion (which should not be surprising).<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided. We also see that there are more quotation of rebublicans that are simultaneously containing the words abortion and law.<br>
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
+      <h4>What comes next?</h4>
+      First the ADA exam. Then, we can start thinking about the various improvements needed:
+      <ul style="padding-left: 50px">
+        <li>Including word embedding (eg: glove embedding)</li>
+        <li>Try again to train a neural network</li>
+        <li>Find an approach to filter non-political quotes from training data</li>
+        <li>and much more...</li>
+      </ul>
+      If you want to give it a try it's extremely simple:
+      <ul style="padding-left: 50px">
+        <li>Download the pickled version of our Vectorizer and Model from google drive</li>
+        <li>Load them using pickle</li>
+        <li>Start making predictions</li>
+        <li>and much more...</li>
+      </ul>
     </div>
   </div>
 </template>
