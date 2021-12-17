@@ -2,9 +2,9 @@
   <v-app id="app">
     <div class="header">
       <div class="topnav">
-        <a href="https://github.com/epfl-ada/ada-2021-project-mmng"><v-img style=""
-            src="./assets/GitHub-Mark-64px.png"
-            max-width="25"
+        <a style="" href="https://github.com/epfl-ada/ada-2021-project-mmng"><v-img style=""
+            src="./assets/GitHub_Logo.png"
+            max-width="70"
             contain
         ></v-img></a>
         <div class="topnav-right">

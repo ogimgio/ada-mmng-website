@@ -60,14 +60,14 @@
       Starting from the left, an exclusively Republican side, then a predominantly republican side, a predominantly democratic one and finally an exclusively democratic one.
       Starting from this idea, we took an interest in trending words by section and the result is very interesting and significant.
       First, let's look at the trending words that are specific to each area:
-      we immediately notice that they are present above all for the exclusive republican and democratic areas. Specifically in the exclusively democratic area we find:
-      community,health country,city, new and for the exclusively republican we find american,government,trump and states.
+      we immediately notice that they are present above all for the exclusive republican and democratic areas. Specifically in the exclusively democratic area we find the following words:
+      community, health, country, city, new. For the exclusively republican we find instead: american, government, trump and states.
       With the exception of the word 'new' these words are extremely significant for the vision of parties:
-      on the one hand they are words related to the homeland and patriotism while on the other hand they are words related to the community, people and health.
+      on the one hand they are words related to the homeland and patriotism (Democrats) while on the other hand they are words related to the community, people and health (Republicans).
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img width="80%" :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
       </div>
-      Now let's look at the words that are shared by several areas at the same time.Here, too, the speech just made is significantly reflected, in fact,
+      Now let's look at the words that are shared by several areas at the same time. Here, too, the speech just made is significantly reflected, in fact,
       although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
       and of Democrats for those that concern the people.
       <div style="margin: 25px 0 25px 0;text-align: center">
@@ -87,12 +87,14 @@
       Let's now use the time series to perform some interesting analyzes:<br>
       For example, we can be interested in the temporal variation of the political vision of various politicians. In this way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized or who is the Democrat who is taking increasingly moderate positions. To do this we made linear regressions on the time series of the 10 most influential politicians for the two parties and they are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show just click on the name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
       <br><br>
-      plot
-      <br><br>
+      <div style="width: 100%;margin: 0 auto;text-align: center">
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/14.embed?showlink=false" height="525" width="100%"></iframe>
+      </div>
       Now we can do the same analysis but for whole parities. To understand if the general ideas of the two parties are polarizing or becoming more similar over time. We plot the trend of the timeseries of the scores of the two parties and the associated linear regressions.
       <br><br>
-      plot
-      <br><br>
+      <div style="width: 100%;margin: 0 auto;text-align: center">
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
+    </div>
       Another very interesting analysis is to see by topic how the distribution of scores within a party varies, and how it varies over time. To do this, we filter the quotations by topic, and look at the associated scores for each parity. Below we show two interesting examples but this analysis could be done much more broadly.<br>
       Non politicians?
       <br>
