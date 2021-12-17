@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <img :src="require('@/assets/chartecco.jpeg')" alt="Snow" style=" width: 100%;
-  z-index: 0;height: 500px;object-fit: cover;filter: blur(10px);">
+    <img :src="require('@/assets/mlml.jpeg')" alt="Snow" style=" width: 100%;
+  z-index: 0;height: 500px;object-fit: cover;  filter: brightness(50%)"/>
     <!--<h1 class="white--text mb-2 display-1 text-xs-center" style="font-weight: 900; text-shadow: 3px 2px #000000">The social network for epic content</h1>-->
-    <h2 style="font-weight: 900;font-size: 75px; color: #212F3E;" class="centered">
+    <h2 style="font-weight: 900;font-size: 75px; color: white;" class="centered">
       HOW CAN WE USE OUR MODEL?
       <hr>
     </h2>
@@ -23,8 +23,8 @@ hr {
   border: none;
   height: 5px;
   /* Set the hr color */
-  color: #333; /* old IE */
-  background-color: #333;
+  color: white; /* old IE */
+  background-color: white;
 }
 .container {
   position: relative;

@@ -2,6 +2,11 @@
   <v-app id="app">
     <div class="header">
       <div class="topnav">
+        <a href="https://github.com/epfl-ada/ada-2021-project-mmng"><v-img style=""
+            src="./assets/GitHub-Mark-64px.png"
+            max-width="25"
+            contain
+        ></v-img></a>
         <div class="topnav-right">
           <a href="#expl">Exploration of results</a>
           <a href="#model">How can we use our model?</a>
@@ -33,7 +38,7 @@ export default {
   },
   data(){
     return{
-      showBar: false
+      showBar: false,
     }
   },
   created () {

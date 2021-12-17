@@ -25,7 +25,7 @@
   margin-right: auto;"/>
       <br><br>
       We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score reflects a simple idea. The more radical politicians, such as Bernie Sanders, have a higher average score. In fact, their quotations are easier to distinguish from the republican ones for our model. <br><br>
-      
+
       To inspect the per-quote accuracy we asked ourselves the following question: what are the restrictions we have to impose to make a robust prediction of the party a politician is affiliated to? Note that our model still does perform pretty well without restriction (x % on the test set and y% on test_set)<br>
       We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
 
@@ -53,7 +53,9 @@
       <br><br>IMMAGINE<br><br>
       DISCUSS:<br>
       If we visualize the distribution of the scores of the quotes by separating the two classes, we realize that we can separate them into four parts.
-      <br><br>IMMAGINE<br><br>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+      <img  width="80%" :src="require('@/assets/graphs/img_distribution.png')" alt="distribution"/>
+      </div>
       Starting from the left, an exclusively Republican side, then a predominantly republican side, a predominantly democratic one and finally an exclusively democratic one.
       Starting from this idea, we took an interest in trending words by section and the result is very interesting and significant.
       First, let's look at the trending words that are specific to each area:
@@ -61,11 +63,15 @@
       community,health country,city, new and for the exclusively republican we find american,government,trump and states.
       With the exception of the word 'new' these words are extremely significant for the vision of parties:
       on the one hand they are words related to the homeland and patriotism while on the other hand they are words related to the community, people and health.
-      <br><br>IMMAGINE<br><br>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+      <img :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
+      </div>
       Now let's look at the words that are shared by several areas at the same time.Here, too, the speech just made is significantly reflected, in fact,
       although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
       and of Democrats for those that concern the people.
-      <br><br>IMMAGINE<br><br>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+      <img :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
+      </div>
       OVER TIME (MAURO):
       We have seen that the model is able to accurately classify the political party to which a politician belongs.
       Previously we have also seen that 4 quotations are sufficient for this purpose.
@@ -84,7 +90,7 @@
       <br><br>
       plot
       <br><br>
-      Now we can do the same analysis but for whole parities. To understand if the general ideas of the two parties are polarizing or becoming more similar over time. We plot the trend of the timeseries of the scores of the two parties and the associated linear regressions. 
+      Now we can do the same analysis but for whole parities. To understand if the general ideas of the two parties are polarizing or becoming more similar over time. We plot the trend of the timeseries of the scores of the two parties and the associated linear regressions.
       <br><br>
       plot
       <br><br>
