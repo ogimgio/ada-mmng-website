@@ -39,11 +39,10 @@
       To inspect the per-quote accuracy we asked ourselves the following question: what are the restrictions we have to impose to make a robust prediction of the party a politician is affiliated to? Note that our model still does perform pretty well without restriction (x % on the test set and y% on test_set)<br>
       We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
 
-      <br><br>IMMAGINE<br><br>
-      Taking a closer look, we realize that 46% of our misclassified politicians have only one quote associated. We plotted these on the following graph. You can place your mouse over quotes to see what they say:
-      <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed?showlink=false" height="1000" width="100%"></iframe>
+      <div style="margin: 25px 0 25px 0;text-align: center;max-width: 80%;">
+        <img  style="margin: auto" width="80%" :src="require('@/assets/images_nicky/Distribution_nb_quotes_misclassified_speaker.png')" alt="distribution"/>
       </div>
+      Taking a closer look, we realize that 46% of our misclassified politicians have only one quote associated. We plotted these on the following graph. You can place your mouse over quotes to see what they say:
       Among these quotes, we can notice 4 types of quotes:
       <ul style="padding-left: 50px">
         <li>quotes that lack context (e.g. “ “), please note that the quote are empty because in our preprocessing we perform stop-word removal.</li>
@@ -54,15 +53,21 @@
       <br>
 
       The residual 64% of misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the average political score of each misclassified speaker with 95% confidence intervals using bootstrapping:
-      <br><br>IMMAGINE<br><br>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed?showlink=false" height="1000" width="100%"></iframe>
+      </div>
       Here we see that x% of these predictions reside in both labels. So the variance of these speakers predictions is too high. So in conclusion: we need to set a minimum number of quotes to make a robust prediction of a speaker.
       <br>
       To decide where to set the cutoff, we calculate the accuracy of our predictions as a function of the number of quotes we have.<br><br>
-      IMMAGINE<br><br>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/34.embed?showlink=false" height="525" width="100%"></iframe>
+      </div>
       By setting  the minimum required accuracy at x%, we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 5.<br><br>
 
       Regarding the accuracy of a prediction with respect to the length of a quote, the plot here below shows that a quote has to have at least four non-stop words.
-      <br><br>IMMAGINE<br><br>
+      <div style="width: 100%;margin: 0 auto;">
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/36.embed?showlink=false" height="525" width="100%"></iframe>
+      </div>
       DISCUSS:<br>
       If we visualize the distribution of the scores of the quotes by separating the two classes, we realize that we can separate them into four parts.
       <div style="margin: 25px 0 25px 0;text-align: center">
@@ -85,12 +90,11 @@
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
       OVER TIME (MAURO):
-      We showed that the model is able to accurately classify the political party to which a politician belongs and that ? quotations are sufficient for this purpose.
+      We showed that the model is able to accurately classify the political party to which a politician belongs and that 4 quotations are sufficient for this purpose.
       For this reason, if a politician has many associated quotes,
       we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
       By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
       in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)
-      <br><br>IMMAGINE<br><br>
     </div>
     <UseModel id="model"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
@@ -110,11 +114,15 @@
       More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through examples, but this can be performed on any kind of topic.
       Performing the analysis on the set of words ['climate','change'], we find the following:<br>
       First of all, let's plot the distribution of the political scores of both parties on the topic:<br>
-      -----DISTRIBUTION PLOT------<br>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+        <img  width="80%" :src="require('@/assets/images_nicky/Distribution_Climate_change.png')" alt="distribution"/>
+      </div>
       The distribution shows us that the democrats generally all have the same opinion on the subject whereas the republican party is very undecided.<br><br>
 
       To understand the parties's opinion on the subject, let's show some quotes that are close to the party's median political score on the subject.<br>
-      -----PLOT OF QUOTES CLOSE TO MEDIAN<br>
+      <div style="width: 100%;margin: 0 auto; max-width: 900px">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/44.embed" height="525" width="100%"></iframe>
+      </div><br>
       The first thing we see is that the median political score of the republican is not that relevant because the distribution of the party's quotes is more or less uniform. So we will have to find a better way to understand the party's opinion on the topic. However, we can see that around this value, republicans tend to say climate change is not a priority.<br>
       For, the democrats, this analysis is more relevant because the density of quotes around the median political score is high. If we take a closer look we can see that the quotes say that climate change exists and that we must act on it. <br>
       (e.g. "")<br>
@@ -127,7 +135,9 @@
       interval 3: political score of quote = [0,0.75[<br>
       interval 4: political score of quote = [0.75,0.1]<br>
       We then show a sample of the quotes that are within that interval.<br>
-      --- SHOW PLOT OF QUOTES PER INTERVAL<br>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/46.embed" height="525" width="100%"></iframe>
+      </div><br>
       INTERVAL1 QUOTE: (e.g. "")<br>
       INTERVAL2 QUOTE: (e.g. "")<br>
       INTERVAL3 QUOTE: (e.g. "")<br>
@@ -154,20 +164,7 @@
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
       </div>
       <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed" height="525" width="100%"></iframe>
-      </div>
-      <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/34.embed" height="525" width="100%"></iframe>
-      </div>
-      <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed" height="525" width="100%"></iframe>
-      </div>
-
-      <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/44.embed" height="525" width="100%"></iframe>
-      </div>
-      <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/46.embed" height="525" width="100%"></iframe>
       </div>
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
@@ -179,8 +176,10 @@
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe>
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
     </div>
-    <div style="width: 100%;margin: 0 auto;max-width: 6000px;">
-      <iframe width="100%" height="525" style="border:none;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
+    <div style="width: 100%;">
+      <iframe width="100%" height="525" style="border:none;max-width: 1500px;
+
+display: block;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
     </div>
   </div>
 </template>
