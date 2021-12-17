@@ -111,19 +111,19 @@
     <UseModel id="model"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-      Let's now use the time series to perform some interesting analyzes:<br>
-      For example, we can be interested in the temporal variation of the political vision of various politicians. In this way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized or who is the Democrat who is taking increasingly moderate positions. To do this we made linear regressions on the time series of the 10 most influential politicians for the two parties and they are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show just click on the name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
+      Let's now use the time series to perform some interesting analysis:<br>
+      For example, we could be interested in the temporal variation of the political vision of various politicians. This way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized overtime or who is the Democrat who is taking increasingly moderate positions. To do this we fit linear regressions to the time series of the 10 most influential politicians for the two parties. The results are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show a single politician just click on his name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
       <br><br>
       <div style="width: 100%;margin: 0 auto;text-align: center">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/14.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
-      Now we can do the same analysis but for whole parities. To understand if the general ideas of the two parties are polarizing or becoming more similar over time. We plot the trend of the timeseries of the scores of the two parties and the associated linear regressions.
+      Now we can do the same analysis but for whole parities at once. That way we can understand if the general ideas of the two parties are polarizing or becoming more similar over time. In the next plot you can observe the trend of the timeseries of the average scores of the two parties and the associated linear regressions.
       <br><br>
       <div style="width: 100%;margin: 0 auto;text-align: center">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
     </div>
-      Another very interesting analysis is to see by topic how the distribution of scores within a party varies, and how it varies over time. To do this, we filter the quotations by topic, and look at the associated scores for each parity. Below we show two interesting examples but this analysis could be done much more broadly. <br>
-      More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through examples, but this can be performed on any kind of topic.
+      Let's now observe how the distribution of scores within a party varies overtime but focusing our attention on single by topics. To do this, we filter the quotations by topic, and look at the associated scores for each party. Below we show two interesting examples but note that this analysis could be done much more broadly (your fantasy is the limit). <br>
+      More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through two beautiful examples that shows the power of this technique.
       Performing the analysis on the set of words ['climate','change'], we find the following:<br>
       First of all, let's plot the distribution of the political scores of both parties on the topic:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
@@ -137,9 +137,9 @@
       </div><br>
       The first thing we see is that the median political score of the republican is not that relevant because the distribution of the party's quotes is more or less uniform. So we will have to find a better way to understand the party's opinion on the topic. However, we can see that around this value, republicans tend to say climate change is not a priority.<br>
       For, the democrats, this analysis is more relevant because the density of quotes around the median political score is high. If we take a closer look we can see that the quotes say that climate change exists and that we must act on it. <br>
-      (e.g. "")<br>
+      (e.g. "... playing to his green, anti-fossil fuel , climate change crowd, ...")<br>
 
-      (e.g "")<br>
+      (e.g "It's abundantly clear that climate change is a matter of life and death")<br>
 
       Now that we have seen quotes close to the median, let's look at the various opinions both parties have by showing quotes all along the political score axis. To do so, we separate our quotes into 4 intervals:<br>
       <ul style="padding-left: 50px">
@@ -158,7 +158,7 @@
       INTERVAL4 QUOTE: (e.g. "... climate change threatens the safety and security of the world ...")<br>
 
 
-      We observe that the trend is that the lower political score, the more politicians tend to deny the existence of climate change say that we should do nothing about it. Whereas, the higher the political score, the more politicians tend to say that climate change exists and that acting on it is a priority.<br>
+      We observe that the trend is that the lower political score, the more politicians tend to deny the existence of climate change say that we should do nothing about it. Whereas, the higher the political score, the more politicians tend to say that climate change exists and that acting on it is a priority. We can see that some outliers are present, remembering us that our model is far from perfect and that our per-quote accuracy is only 75% =( .<br>
 
       Finally, we plot the average political score of the politicians by averaging their quotes. This allows us to see where a politician stands on the subject and how divided a party is. The democratic party tends to all agree that climate change exists and that we should act on it. On the other hand, Republicans are divided on the subject. Some tend to agree with democrats, and others strongly disagree and deny their existence.<br>
 
