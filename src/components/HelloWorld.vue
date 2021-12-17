@@ -138,10 +138,6 @@
       INTERVAL4 QUOTE: (e.g. "")<br>
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
-<br>
-      Non politicians?
-      <br>
-      Can we identify
     </div>
     <div style="width: 100%;margin: 0 auto;">
       <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/5.embed?showlink=false" height="525" width="100%"></iframe>
