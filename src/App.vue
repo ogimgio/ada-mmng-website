@@ -2,15 +2,11 @@
   <v-app id="app">
     <div class="header">
       <div class="topnav">
-        <a style="" href="https://github.com/epfl-ada/ada-2021-project-mmng"><v-img style=""
-            src="./assets/GitHub_Logo.png"
-            max-width="70"
-            contain
-        ></v-img></a>
+        <a href="https://github.com/epfl-ada/ada-2021-project-mmng" style="color:grey;" onmouseover="this.style.color='black';" onmouseout="this.style.color='grey'">GitHub repository</a>
         <div class="topnav-right">
-          <a href="#introduction">American Data Analysis</a>
-          <a href="#exploration">Exploration of results</a>
-          <a href="#model">How can we use our model?</a>
+          <a href="#introduction" onmouseover="this.style.color='black';" onmouseout="this.style.color='grey'" style="color:grey;">American Data Analysis</a>
+          <a href="#exploration" onmouseover="this.style.color='black';" onmouseout="this.style.color='grey'" style="color:grey;">Exploration of results</a>
+          <a href="#model" onmouseover="this.style.color='black';" onmouseout="this.style.color='grey'" style="color:grey;">How can we use our model?</a>
         </div>
       </div>
       <div class="progress-bar progress-container" id="myBar" v-if="showBar">
@@ -163,29 +159,15 @@ export default {
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  color: red;
   float: left;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
-
-/* Add a color to the active/current link */
-.topnav a:valid {
-  background-color: #04AA6D;
-  color: white;
-}
-
 /* Right-aligned section inside the top navigation */
 .topnav-right {
   float: right;
-}
-.topnav-right a:visited{
-  color: grey;
-}
-.topnav-right a:hover{
-  color: black;
 }
 ul {
   margin: 0;

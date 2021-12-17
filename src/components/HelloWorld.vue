@@ -181,7 +181,7 @@
       Let's look now at a topic where democrats and republicans are strongly divided: abortion.<br>
       By choosing the same set of words ['abortion','law'] we perform a similar analysis. Before reading the discussion you could try to take conclusion by yourself just by looking the plots. Here are all our results:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
-        <img  width="80%" :src="require('@/assets/images_nicky/img_1.jpeg')" alt="distribution"/>
+        <img  width="60%" :src="require('@/assets/images_nicky/img_1.jpeg')" alt="distribution"/>
       </div>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe></div><br>
