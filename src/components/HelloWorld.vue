@@ -98,11 +98,8 @@
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
-<<<<<<< HEAD
-=======
 
       OVER TIME (MAURO):
->>>>>>> c27c5ee61eacfc2e2470573c73d4c07c8d902d5d
       We showed that the model is able to accurately classify the political party to which a politician belongs and that 4 quotations are sufficient for this purpose.
       For this reason, if a politician has many associated quotes,
       we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
