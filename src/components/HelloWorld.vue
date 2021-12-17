@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div style=" text-align: justify;">
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
       <div style="text-align: center; font-style: italic">
       Is it possible to analyze politics starting exclusively from the politicians' quotations? <br>
-      Is it possible to extract significant information that allows us to extract meaningful insights about American politics?<br>
-      Follow us along on our journey where we apply data analysis techniques to better understand political trends of the past 5 years.
+      Is it possible to extract significant information that allows us to extract meaningful insights about American politics?</div><br><br>
+      Follow us along on our journey where we apply data analysis techniques to better understand political trends of the past 5 years.<br><br>
       The ensemble of all quotations of the members of a party is an excellent representation of the ideas and values of that party. In fact, these quotations represent the very vision of the political party. Starting from this reflection, let's analyze American politics starting from the quotes found in the Quotebank dataset.
       In Quotebank there are more than 7 million quotations of American politicians, among them, more than 6 million are of can be associated to 15000 politicians affiliated either to the Democratic Party or the Republican Party. <br><br>
 
@@ -115,7 +115,12 @@
     <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
     </div>
-    <v-btn @click="scrollMeTo('introduction')">Porto, Portugal</v-btn>
+    <div style="width: 100%;margin: 0 auto;">
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed" height="525" width="100%"></iframe>
+    </div>
+    <div style="width: 100%;margin: 0 auto;">
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/34.embed" height="525" width="100%"></iframe>
+    </div>
   </div>
 </template>
 
