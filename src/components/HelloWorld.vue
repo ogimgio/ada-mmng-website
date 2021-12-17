@@ -11,9 +11,7 @@
 
       We have trained a machine learning model to predict the political affiliation of the speaker of a quote. With a rather simple model we have managed to achieve a 75% accuracy, which is quite a surprising result! This goes to show how polarized American politics have become nowadays. Both parties often have very clearly opposite opinions of topics such as climate change or abortion. <br><br>
 
-      We will also use the our model and data to explore how a politician's opinions align with their party and perform time series analysis to analyse their evolution over time. <br><br>
-
-      TODO maybe add some more into stuff.
+      We will also use the our model and data to explore how a politician's opinions align with their party, perform time series analysis to analyse their evolution over time, analyse the polarization of parties on different topics and more! <br><br>
 
       So hop on and come see the surprising power of data analysis in our modern day and age!
 
@@ -30,13 +28,16 @@
       For a single quote, the accuracy exceeds 75%. This value may seem low if you don't consider the fact that the data is noisy. As one might expect, although the majority of the quotes of a politician have to do with politics, not all quotes do. Additionally, some of the quotes might not have enough words for the model to truly understand the context.
       <br><br>
       <h4>The model in practice</h4>
-      First things first let’s see how some familiar faces are positioned in our model predictions:<br><br>
+      First things first let’s see how some familiar faces are positioned in our model predictions (mouse over the graph to see names associated to each curve):<br><br>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/19.embed?show_link=false" height="525" width="100%"></iframe>
       </div>
       <br><br>
-      We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score reflects the following simple idea: the more radical politicians, such as Bernie Sanders, have a higher average score. This is due to the fact that, for our model, their quotations are easier to distinguish from the opposite party ones. Now we have an interpretation for this political score that we can keep in mind for future analysis. We can note that the timeserie of Alexandria Ocasio Cortez has a really high variance in the first years and the mean seems to increase. In facts, in the first years she has not many quotes associated and she was not as much into politics until 2008. <br><br>
-      To inspect the per-quote accuracy we asked ourselves the following question: what are the restrictions we have to impose to make a robust prediction of the party a politician is affiliated to? Note that our model still does perform pretty well without restriction (x % on the test set and y% on test_set)<br>
+      We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score is also correlated with how strongly a politician's opinions veer towards on party or another: the more radical politicians, such as Bernie Sanders, have average scores closer to the extremes.<br>
+      Now that we have an interpretation for this political score that we can keep in mind for future analyses. Notice the large zig-zag on the graph, that is the time-series of Alexandria Ocasio-Cortez. In the first few years she has a high variance and at around 2018 her curve stabilizes and joins the rest of the democrats. In fact, she only became a prominent American politician in 2018, before that she much fewer quotes associated to her, which perfectly explains the high variance before 2018 and that how after that she indeed joins her party trends.<br><br>
+
+      We know our per-quote accuracy and also that our model functions well for popular politicians who have plenty of quotes to average our predictions over. <br>
+      Naturally, our the next question we ask ourselves is: what are the restrictions we have to impose to make a robust prediction of which party a politician is affiliated to? Note that our model still does perform pretty well without restriction. <br>
       We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
 
       <div style="margin: 25px 0 25px 0;text-align: center;max-width: 80%;">
