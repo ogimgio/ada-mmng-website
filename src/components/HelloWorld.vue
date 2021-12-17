@@ -130,6 +130,7 @@
       (e.g "")<br>
 
       Now that we have seen quotes close to the median, let's look at the various opinions both parties have by showing quotes all along the political score axis. To do so, we separate our quotes into 4 intervals:<br>
+
       interval 1: political score of quote = [0,0.25[<br>
       interval 2: political score of quote = [0,0.5[<br>
       interval 3: political score of quote = [0,0.75[<br>
@@ -138,10 +139,11 @@
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/46.embed" height="525" width="100%"></iframe>
       </div><br>
-      INTERVAL1 QUOTE: (e.g. "")<br>
-      INTERVAL2 QUOTE: (e.g. "")<br>
-      INTERVAL3 QUOTE: (e.g. "")<br>
-      INTERVAL4 QUOTE: (e.g. "")<br>
+      INTERVAL1 QUOTE: (e.g. "there are scientist that thinks a lot of different things about climat change. There are some who thinks we are warming, some thinks we are cooling, some thinks we are stable. ...")<br>
+      INTERVAL2 QUOTE: (e.g. "whether it's hot or cold, the enemy is there,as far as liberals are concerned. That's why climate change is the perfect enemy ...")<br>
+      INTERVAL3 QUOTE: (e.g. "We know climate change is real and it impacts our armed forces ...")<br>
+      INTERVAL4 QUOTE: (e.g. "... climate change threatens the safety and security of the world ...")<br>
+
 
       We observe that the trend is that the lower political score, the more politicians tend to deny the existence of climate change say that we should do nothing about it. Whereas, the higher the political score, the more politicians tend to say that climate change exists and that acting on it is a priority.<br>
 
@@ -154,10 +156,10 @@
 
       Here we can see that the parties are strongly divided, the political scores of the republicans and democrats quotes are polarized around 0 and 1 respectively. Around the median, which in this case more or less represents the general opinion of the party (see distribution) we see that republicans tend to be anti-abortion whereas democrats tend to be pro-abortion.<br>
       By showing the quotes along the political score axis, we see the typical scores in all the intervals<br>
-      INTERVAL1 QUOTE: (e.g. "")<br>
-      INTERVAL2 QUOTE: (e.g. "")<br>
-      INTERVAL3 QUOTE: (e.g. "")<br>
-      INTERVAL4 QUOTE: (e.g. "")<br>
+      INTERVAL1 QUOTE: (e.g. "I do want to see the number of abortion go down")<br>
+      INTERVAL2 QUOTE: (e.g. "... given the potential of abortion to become a tool for genetic manipulation, the court will need to confront ...")<br>
+      INTERVAL3 QUOTE: (e.g. "... it's inconsistent and will lead to a ban of abortion in Alabama, even for victims of incest or rape ...")<br>
+      INTERVAL4 QUOTE: (e.g. "... it's time to pass state laws to protect womans 's constitutional right of abortion...")<br>
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
       <div style="width: 100%;margin: 0 auto;">
