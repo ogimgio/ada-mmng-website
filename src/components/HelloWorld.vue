@@ -75,7 +75,6 @@
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/36.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
       <h4>Translating political scores into words</h4>
-      Let's visualize the distribution of the scores of the quotes by separating the two classes.
 
       Next we'll visualize the distribution of the scores of the quotes by separating the two classes.
       <div style="margin: 25px 0 25px 0;text-align: center">
@@ -99,6 +98,7 @@
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
+
       OVER TIME (MAURO):
       We showed that the model is able to accurately classify the political party to which a politician belongs and that 4 quotations are sufficient for this purpose.
       For this reason, if a politician has many associated quotes,
@@ -106,6 +106,7 @@
       By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
       in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)<br><br>
       Now that we have seen the models particularity, lets look at the the distribution of the political score of all the politician on our dataset.
+
     </div>
     <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 10px 0 0 0;max-width: 1050px;">
