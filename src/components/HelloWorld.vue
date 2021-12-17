@@ -122,16 +122,18 @@
       (e.g "")<br>
 
       Now that we have seen quotes close to the median, let's look at the various opinions both parties have by showing quotes all along the political score axis. To do so, we separate our quotes into 4 intervals:<br>
+
       interval 1: political score of quote = [0,0.25[<br>
       interval 2: political score of quote = [0,0.5[<br>
       interval 3: political score of quote = [0,0.75[<br>
       interval 4: political score of quote = [0.75,0.1]<br>
       We then show a sample of the quotes that are within that interval.<br>
       --- SHOW PLOT OF QUOTES PER INTERVAL<br>
-      INTERVAL1 QUOTE: (e.g. "")<br>
-      INTERVAL2 QUOTE: (e.g. "")<br>
-      INTERVAL3 QUOTE: (e.g. "")<br>
-      INTERVAL4 QUOTE: (e.g. "")<br>
+      INTERVAL1 QUOTE: (e.g. "there are scientist that thinks a lot of different things about climat change. There are some who thinks we are warming, some thinks we are cooling, some thinks we are stable. ...")<br>
+      INTERVAL2 QUOTE: (e.g. "whether it's hot or cold, the enemy is there,as far as liberals are concerned. That's why climate change is the perfect enemy ...")<br>
+      INTERVAL3 QUOTE: (e.g. "We know climate change is real and it impacts our armed forces ...")<br>
+      INTERVAL4 QUOTE: (e.g. "... climate change threatens the safety and security of the world ...")<br>
+
 
       We observe that the trend is that the lower political score, the more politicians tend to deny the existence of climate change say that we should do nothing about it. Whereas, the higher the political score, the more politicians tend to say that climate change exists and that acting on it is a priority.<br>
 
