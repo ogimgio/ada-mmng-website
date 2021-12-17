@@ -17,7 +17,7 @@
       <h4>The model in numbers</h4>
       The most important question: Can the model understand something? And how good are its predictions?<br>
       On the test set, our model needs 8 quotations to obtain an accuracy greater than 80% on the prediction. In addition, if we try to classify a politician, the accuracy is 98,?%.<br>
-      For a single quote, the accuracy is around 75%. This value may seem low if you don't consider the fact that the data is noisy. As one might expect, although the majority of the quotes of a politician have to do with politics, not all quotes do.Additionally, some of the quotes might not have enough words for the model to truly understand the context.
+      For a single quote, the accuracy exceeds 75%. This value may seem low if you don't consider the fact that the data is noisy. As one might expect, although the majority of the quotes of a politician have to do with politics, not all quotes do. Additionally, some of the quotes might not have enough words for the model to truly understand the context.
       <br><br>
       <h4>The model in practice</h4>
       First things first let’s see how some familiar faces are positioned in our model predictions:<br><br>
@@ -27,24 +27,24 @@
   margin-left: auto;
   margin-right: auto;"/>
       <br><br>
-      We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score reflects a simple idea. The more radical politicians, such as Bernie Sanders, have a higher average score. In fact, their quotations are easier to distinguish from the republican ones for our model. <br><br>
 
+      We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score reflects the following simple idea: the more radical politicians, such as Bernie Sanders, have a higher average score. This is due to the fact that, for our model, their quotations are easier to distinguish from the opposite party ones. Now we have an interpretation for this political score that we can keep in mind for future analysis. <br><br>
       To inspect the per-quote accuracy we asked ourselves the following question: what are the restrictions we have to impose to make a robust prediction of the party a politician is affiliated to? Note that our model still does perform pretty well without restriction (x % on the test set and y% on test_set)<br>
       We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
 
       <br><br>IMMAGINE<br><br>
-      Taking a closer look, we realize that 46% of our misclassified politicians have only one quote. We have plotted these on the following graph.Place your mouse over quotes to see what they say:
+      Taking a closer look, we realize that 46% of our misclassified politicians have only one quote associated. We plotted these on the following graph. You can place your mouse over quotes to see what they say:
       <br><br>IMMAGINE<br><br>
-      Among these quotes, we 4 types of quotes:
+      Among these quotes, we can notice 4 types of quotes:
       <ul style="padding-left: 50px">
-        <li>quotes that lack context (e.g. “ “)</li>
+        <li>quotes that lack context (e.g. “ “), please note that the quote are empty because in our preprocessing we perform stop-word removal.</li>
         <li>quotes that have nothing to do with politics (e.g. “ “)</li>
         <li>quotes where a politician expresses an opinion that tends to belong more to his opposite party (e.g. “”)</li>
         <li>quotes that should be correctly classified but the model failed to do so</li>
       </ul>
       <br>
 
-      The residual 64% of the misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the ‘avg_prob_dem’ of each misclassified speaker with 95% confidence intervals using bootstrapping:
+      The residual 64% of misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the average political score of each misclassified speaker with 95% confidence intervals using bootstrapping:
       <br><br>IMMAGINE<br><br>
       Here we see that x% of these predictions reside in both labels. So the variance of these speakers predictions is too high. So in conclusion: we need to set a minimum number of quotes to make a robust prediction of a speaker.
       <br>
@@ -76,19 +76,17 @@
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
       OVER TIME (MAURO):
-      We have seen that the model is able to accurately classify the political party to which a politician belongs.
-      Previously we have also seen that 4 quotations are sufficient for this purpose.
+      We showed that the model is able to accurately classify the political party to which a politician belongs and that ? quotations are sufficient for this purpose.
       For this reason, if a politician has many associated quotes,
-      we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of the politician.
+      we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
       By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
-      in order to decrease the score variance. We see that our model clearly separates the Republicans from the Democrats.
-      We also see that radical Democrat Bernie Sanders is the one who gets the highest scores among famous people belonging to his party.
+      in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)
       <br><br>IMMAGINE<br><br>
     </div>
     <UseModel id="model"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-      As we have seen, politicians' scores can be analyzed over time and this allows us to make very interesting analyzes:<br>
+      Let's now use the time series to perform some interesting analyzes:<br>
       For example, we can be interested in the temporal variation of the political vision of various politicians. In this way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized or who is the Democrat who is taking increasingly moderate positions. To do this we made linear regressions on the time series of the 10 most influential politicians for the two parties and they are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show just click on the name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
       <br><br>
       plot
@@ -99,7 +97,6 @@
       <br><br>
       Another very interesting analysis is to see by topic how the distribution of scores within a party varies, and how it varies over time. To do this, we filter the quotations by topic, and look at the associated scores for each parity. Below we show two interesting examples but this analysis could be done much more broadly.<br>
       Non politicians?
-
       <br>
       Can we identify
     </div>
