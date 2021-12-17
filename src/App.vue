@@ -1,6 +1,12 @@
 <template>
   <v-app id="app">
     <div class="header">
+      <div class="topnav">
+        <div class="topnav-right">
+          <a href="#expl">Exploration of results</a>
+          <a href="#model">How can we use our model?</a>
+        </div>
+      </div>
       <div class="progress-bar progress-container" id="myBar" v-if="showBar">
       </div>
     </div>
@@ -103,5 +109,36 @@ export default {
   font-size: 100px;
   line-height: 70px;
   font-weight: bold;
+}
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  color: red;
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Add a color to the active/current link */
+.topnav a:valid {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
+.topnav-right a:visited{
+  color: grey;
+}
+.topnav-right a:hover{
+  color: black;
 }
 </style>

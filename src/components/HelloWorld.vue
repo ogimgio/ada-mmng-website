@@ -8,7 +8,7 @@
       We have trained a machine learning model to classify these quotes to the corresponding political party. Sentences with fewer than x words do not contain enough meaning and have therefore been discarded. Our model therefore associates a score that varies from 0 (= 100% Republican) to 0.5 (= 100% democratic) to each quotation that is given as an input.
     </div>
     <!--<Introduction ref="introduction"/>-->
-    <Capitolo1/>
+    <Capitolo1 id="expl"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
       <h4>The Question</h4>
@@ -74,7 +74,7 @@
       We also see that radical Democrat Bernie Sanders is the one who gets the highest scores among famous people belonging to his party.
       <br><br>IMMAGINE<br><br>
     </div>
-    <UseModel/>
+    <UseModel id="model"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
       study trends (MAURO):
@@ -89,8 +89,14 @@
       <br>
       Can we identify
     </div>
-    <div style="width: 50%;margin: 0 auto;">
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/5.embed?showlink=false" height="525" width="100%"></iframe>
+    <div style="width: 100%;margin: 0 auto;">
+      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/5.embed?showlink=false" height="525" width="100%"></iframe>
+    </div>
+    <div style="width: 100%;margin: 0 auto;">
+      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
+    </div>
+    <div style="width: 100%;margin: 0 auto;">
+      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/14.embed?showlink=false" height="525" width="100%"></iframe>
     </div>
     <v-btn @click="scrollMeTo('introduction')">Porto, Portugal</v-btn>
   </div>
@@ -165,5 +171,8 @@ li{
 }
 h4{
   font-size: 1.875rem;
+}
+.idgraph {
+  -webkit-transform: scale(0.75);
 }
 </style>
