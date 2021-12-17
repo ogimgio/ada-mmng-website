@@ -21,7 +21,7 @@
     <!--<Introduction ref="introduction"/>-->
     <Capitolo1 id="exploration"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
-    margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
+    margin-left: auto;padding: 50px 15px 0px;max-width: 850px;">
       <h4>The model in numbers</h4>
       The most important question: Can the model understand something? And how good are its predictions?<br>
       On the test set, our model needs 8 quotations to obtain an accuracy greater than 80% on the prediction. In addition, if we try to classify a politician, the accuracy is 98,?%.<br>
@@ -103,10 +103,13 @@
       By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
       in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)<br><br>
       Now that we have seen the models particularity, lets look at the the distribution of the political score of all the politician on our dataset.
-      <div style="margin: 25px 0 25px 0;text-align: center">
+    </div>
+    <div class="col-12" ref="introduction" style="margin-right: auto;
+    margin-left: auto;padding: 10px 0 0 0;max-width: 1050px;">
         <img width="1162" height="450" :src="require('@/assets/images_nicky/mados.jpeg')" alt="distribuition_scores"/>
       </div>
-
+    <div class="col-12" ref="introduction" style="margin-right: auto;
+    margin-left: auto;padding: 10px 15px 75px;max-width: 850px;">
       Finally lets show the political score of some of the most famous american politicians:
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed" height="525" width="100%"></iframe>
@@ -115,19 +118,19 @@
     <UseModel id="model"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-      Let's now use the time series to perform some interesting analyzes:<br>
-      For example, we can be interested in the temporal variation of the political vision of various politicians. In this way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized or who is the Democrat who is taking increasingly moderate positions. To do this we made linear regressions on the time series of the 10 most influential politicians for the two parties and they are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show just click on the name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
+      Let's now use the time series to perform some interesting analysis:<br>
+      For example, we could be interested in the temporal variation of the political vision of various politicians. This way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized overtime or who is the Democrat who is taking increasingly moderate positions. To do this we fit linear regressions to the time series of the 10 most influential politicians for the two parties. The results are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show a single politician just click on his name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
       <br><br>
       <div style="width: 100%;margin: 0 auto;text-align: center">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/14.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
-      Now we can do the same analysis but for whole parities. To understand if the general ideas of the two parties are polarizing or becoming more similar over time. We plot the trend of the timeseries of the scores of the two parties and the associated linear regressions.
+      Now we can do the same analysis but for whole parities at once. That way we can understand if the general ideas of the two parties are polarizing or becoming more similar over time. In the next plot you can observe the trend of the timeseries of the average scores of the two parties and the associated linear regressions.
       <br><br>
       <div style="width: 100%;margin: 0 auto;text-align: center">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
     </div>
-      Another very interesting analysis is to see by topic how the distribution of scores within a party varies, and how it varies over time. To do this, we filter the quotations by topic, and look at the associated scores for each parity. Below we show two interesting examples but this analysis could be done much more broadly. <br>
-      More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through examples, but this can be performed on any kind of topic.
+      Let's now observe how the distribution of scores within a party varies overtime but focusing our attention on single by topics. To do this, we filter the quotations by topic, and look at the associated scores for each party. Below we show two interesting examples but note that this analysis could be done much more broadly (your fantasy is the limit). <br>
+      More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through two beautiful examples that shows the power of this technique.
       Performing the analysis on the set of words ['climate','change'], we find the following:<br>
       First of all, let's plot the distribution of the political scores of both parties on the topic:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
@@ -141,9 +144,9 @@
       </div><br>
       The first thing we see is that the median political score of the republican is not that relevant because the distribution of the party's quotes is more or less uniform. So we will have to find a better way to understand the party's opinion on the topic. However, we can see that around this value, republicans tend to say climate change is not a priority.<br>
       For, the democrats, this analysis is more relevant because the density of quotes around the median political score is high. If we take a closer look we can see that the quotes say that climate change exists and that we must act on it. <br>
-      (e.g. "")<br>
+      (e.g. "... playing to his green, anti-fossil fuel , climate change crowd, ...")<br>
 
-      (e.g "")<br>
+      (e.g "It's abundantly clear that climate change is a matter of life and death")<br>
 
       Now that we have seen quotes close to the median, let's look at the various opinions both parties have by showing quotes all along the political score axis. To do so, we separate our quotes into 4 intervals:<br>
       <ul style="padding-left: 50px">
@@ -162,32 +165,30 @@
       INTERVAL4 QUOTE: (e.g. "... climate change threatens the safety and security of the world ...")<br>
 
 
-      We observe that the trend is that the lower political score, the more politicians tend to deny the existence of climate change say that we should do nothing about it. Whereas, the higher the political score, the more politicians tend to say that climate change exists and that acting on it is a priority.<br>
+      We observe that the trend is that the lower political score, the more politicians tend to deny the existence of climate change say that we should do nothing about it. Whereas, the higher the political score, the more politicians tend to say that climate change exists and that acting on it is a priority. We can see that some outliers are present, remembering us that our model is far from perfect and that our per-quote accuracy is only 75% =( .<br>
 
       Finally, we plot the average political score of the politicians by averaging their quotes. This allows us to see where a politician stands on the subject and how divided a party is. The democratic party tends to all agree that climate change exists and that we should act on it. On the other hand, Republicans are divided on the subject. Some tend to agree with democrats, and others strongly disagree and deny their existence.<br>
-
-      Let's look now at a topic where democrats and republicans are strongly divided: income tax.<br>
-      By choosing the same set of words ['abortion'] we perform a similar analysis. Here are our results:<br>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
+      </div>
+      Let's look now at a topic where democrats and republicans are strongly divided: abortion.<br>
+      By choosing the same set of words ['abortion','law'] we perform a similar analysis. Before reading the discussion you could try to take conclusion by yourself just by looking the plots. Here are all our results:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
         <img  width="80%" :src="require('@/assets/images_nicky/Distribution_abortion_law.png')" alt="distribution"/>
       </div>
-      --ALL PLOTS---<br>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe></div><br>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/53.embed" height="525" width="100%"></iframe></div><br>
 
       Here we can see that the parties are strongly divided, the political scores of the republicans and democrats quotes are polarized around 0 and 1 respectively. Around the median, which in this case more or less represents the general opinion of the party (see distribution) we see that republicans tend to be anti-abortion whereas democrats tend to be pro-abortion.<br>
-      By showing the quotes along the political score axis, we see the typical scores in all the intervals<br>
+      By showing the quotes along the political score axis, we see the typical scores in all the intervals:<br>
       INTERVAL1 QUOTE: (e.g. "I do want to see the number of abortion go down")<br>
       INTERVAL2 QUOTE: (e.g. "... given the potential of abortion to become a tool for genetic manipulation, the court will need to confront ...")<br>
       INTERVAL3 QUOTE: (e.g. "... it's inconsistent and will lead to a ban of abortion in Alabama, even for victims of incest or rape ...")<br>
       INTERVAL4 QUOTE: (e.g. "... it's time to pass state laws to protect womans 's constitutional right of abortion...")<br>
-      We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
-      Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
-      <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
-      </div>
+      We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion (which should not be surprising).<br>
+      Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided. We also see that there are more quotation of rebublicans that are simultaneously containing the words abortion and law.<br>
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
     </div>
   </div>
