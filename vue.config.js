@@ -1,5 +1,10 @@
+
+
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-    ? '/ada-mmng-website/'
-    : '/'
+    publicPath:
+        process.env.NODE_ENV === "production" ? "/ada-mmng-website/" : "/",
+
+    transpileDependencies: [
+        'vuetify'
+    ]
 }
