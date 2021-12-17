@@ -75,8 +75,8 @@
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/36.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
       <h4>Translating political scores into words</h4>
-      Let's visualize the distribution of the scores of the quotes by separating the two classes.
 
+      Next we'll visualize the distribution of the scores of the quotes by separating the two classes.
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img  width="80%" :src="require('@/assets/graphs/img_distribution.png')" alt="distribution"/>
       </div>
@@ -86,23 +86,30 @@
       First, let's look at the trending words that are specific to each interval:
       we immediately notice that they are most present for the exclusive republican and democratic intervals. Specifically in the exclusively democratic zone we find the following words:
       community, health, country, city, new. For the exclusively republican we find instead: american, government, trump and states.
-      With the exception of the word 'new' these words are extremely significant for the vision of parties:
-      on the one hand they are words related to the homeland and patriotism (Democrats) while on the other hand they are words related to the community, people and health (Republicans).
-      <div style="margin: 25px 0 25px 0px;text-align: center">
-      <img width="70%" :src="require('@/assets/graphs/bro.png')" alt="words(unique)"/>
+      With the exception of the word 'new' these words are extremely significant for the vision of parties.
+      Republican's have common words related to the homeland and patriotism, while Democrats have common words related to community, people and health.
+
+      <div style="margin: 25px 0 25px 0;text-align: center">
+      <img width="80%" :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
       </div>
-      Now let's look at the words that are shared by several areas at the same time. Here, too, the speech just made is significantly reflected, in fact,
-      although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
-      and of Democrats for those that concern the people.
+
+      Now let's look at the words that are shared by several intervals. Here too we see some trends. Words that concern "America" are more on the Republican side of the spectrum, whereas words that concern "People" are more on the Democratic side.
+
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
+<<<<<<< HEAD
+=======
+
+      OVER TIME (MAURO):
+>>>>>>> c27c5ee61eacfc2e2470573c73d4c07c8d902d5d
       We showed that the model is able to accurately classify the political party to which a politician belongs and that 4 quotations are sufficient for this purpose.
       For this reason, if a politician has many associated quotes,
       we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
       By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
       in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)<br><br>
       Now that we have seen the models particularity, lets look at the the distribution of the political score of all the politician on our dataset.
+
     </div>
     <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 10px 0 0 0;max-width: 1050px;">
