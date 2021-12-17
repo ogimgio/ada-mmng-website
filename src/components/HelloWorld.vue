@@ -1,22 +1,108 @@
 <template>
   <div>
-    <h1 style="margin-bottom: 30px">ADA Quotebank Project - The AI Politologist</h1>
-    <div class="hsg">
-      <div style="margin-bottom: 50px">Our project consist in the analysis of the political inclination of a politician. Here we illustrate it below.</div>
-    <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
-      <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
-
-      <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
-
-      <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
-
+    <div class="col-12" ref="introduction" style="margin-right: auto;
+    margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
+      Is it possible to analyze politics starting exclusively from the politicians' quotations? Is it possible to extract significant information that allows us to analyze the current situation in depth? Follow us along and we will show our attempt to do so using Quotebank dataset.<br><br>
+      There is nothing that describes a political party better than the quotes of its politicians. In fact, the whole of these quotations is the very vision of the political party. Starting from this reflection, let's analyze American politics starting from the quotes found in the Quotebank dataset.<br>
+      In quotebanks there are more than 7 million quotations of American politicians of which more than six million are of about fifteen thousand politicians affiliated to the Democratic Party or the Republican Party. <br><br>
+      We have trained a machine learning model to classify these quotes to the corresponding political party. Sentences with fewer than x words do not contain enough meaning and have therefore been discarded. Our model therefore associates a score that varies from 0 (= 100% Republican) to 0.5 (= 100% democratic) to each quotation that is given as an input.
     </div>
+   <!--<Introduction ref="introduction"/>-->
+    <Capitolo1/>
+    <div class="col-12" ref="introduction" style="margin-right: auto;
+    margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
+      <h4>The Question</h4>
+      The most spontaneous question to ask: Can the model understand something? And how good is he at making predictions?<br>
+      Our model needs only 4 quotations to obtain an accuracy greater than 95% on the prediction. In addition, if we look at the nearly 15,000 politicians, the accuracy is 98,?%.<br>
+      For a single quote, the accuracy is around 75%. This value may seem low if you don't consider the fact that the data is noisy. But if we think about it, not all politicians' quotes are about politics per se, so this result is better than it seems.
+      <br><br>
+      <h4>The research</h4>
+      First things first let’s show how some familiar faces are positioned in our model:<br><br>
+      <img :src="require('@/assets/esempio.jpeg')" alt="Snow" style="width: 50%;display: block;
+  margin-left: auto;
+  margin-right: auto;"/>
+      <br><br>
+      Our goal was, given a set of quotes, to be able to correctly classify speakers as either democrats or republicans. To do so, we trained our model on individual quotes that have as labels the party of the speaker of the quotee.<br>
+      As one might expect, although the majority of the quotes of a politician have to do with politics, not all quotes do. Additionally, some of the quotes might not have enough words for the model to truly understand the context. Therefore we asked ourselves the following question: what are the restrictions we have to impose to make a robust prediction of the party a politician is affiliated to? Note that our model still does perform pretty well without restriction (x % on the test set and y% on test_set)<br>
+      We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
+
+      <br><br>IMMAGINE<br><br>
+      Taking a closer look, we realize that 46% of our misclassified politicians have only one quote. We have plotted these on the following graph.Place your mouse over quotes to see what they say:
+      <br><br>IMMAGINE<br><br>
+      Among these quotes, we 4 types of quotes:
+      <ul style="padding-left: 50px">
+        <li>quotes that lack context (e.g. “ “)</li>
+        <li>quotes that have nothing to do with politics (e.g. “ “)</li>
+        <li>quotes where a politician expresses an opinion that tends to belong more to his opposite party (e.g. “”)</li>
+        <li>quotes that should be correctly classified but the model failed to do so</li>
+      </ul>
+      <br>
+
+      The other 64% of the misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the ‘avg_prob_dem’ of each misclassified speaker with 95% confidence intervals using bootstrapping:
+      <br><br>IMMAGINE<br><br>
+      Here we see that x% of these predictions reside in both labels. So the variance of these speakers predictions is too high. So in conclusion: we need to set a minimum number of quotes to make a robust prediction of a speaker.
+      <br>
+      To decide where to set the cutoff, we calculate the accuracy of our predictions as a function of the number of quotes we have.<br><br>
+      IMMAGINE<br><br>
+      By setting  the minimum required accuracy at x%, we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 5.<br><br>
+
+      Regarding the accuracy of a prediction with respect to the length of a quote, the plot here below shows that a quote has to have at least for words which are not stop words.
+      <br><br>IMMAGINE<br><br>
+      DISCUSS:<br>
+      TRENDING WORD (MONO)<br>
+      If we visualize the distribution of the scores of the quotes by separating the two classes, we realize that we can separate them into four parts.
+      <br><br>IMMAGINE<br><br>
+      Starting from the left, an exclusively Republican side, then a predominantly republican side, a predominantly democratic one and finally an exclusively democratic one.
+      Starting from this idea, we took an interest in trending words by section and the result is very interesting and significant.
+      First, let's look at the trending words that are specific to each area:
+      we immediately notice that they are present above all for the exclusive republican and democratic areas. Specifically in the exclusively democratic area we find:
+      community,health country,city, new and for the exclusively republican we find american,government,trump and states.
+      With the exception of the word 'new' these words are extremely significant for the vision of parties:
+      on the one hand they are words related to the homeland and patriotism while on the other hand they are words related to the community, people and health.
+      <br><br>IMMAGINE<br><br>
+      Now let's look at the words that are shared by several areas at the same time.Here, too, the speech just made is significantly reflected, in fact,
+      although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
+      and of Democrats for those that concern the people.
+      <br><br>IMMAGINE<br><br>
+      OVER TIME (MAURO):
+      We have seen that the model is able to accurately classify the political party to which a politician belongs.
+      Previously we have also seen that 4 quotations are sufficient for this purpose.
+      For this reason, if a politician has many associated quotes,
+      we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of the politician.
+      By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
+      in order to decrease the score variance. We see that our model clearly separates the Republicans from the Democrats.
+      We also see that radical Democrat Bernie Sanders is the one who gets the highest scores among famous people belonging to his party.
+      <br><br>IMMAGINE<br><br>
+    </div>
+    <UseModel/>
+    <div class="col-12" ref="introduction" style="margin-right: auto;
+    margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
+      study trends (MAURO):
+      As we have seen, politicians' scores can be analyzed over time and this allows us to make very interesting analyzes:<br>
+      Who is the democratic politician who is 'polarizing' the most? who instead tends more towards the center?
+      <br><br>
+      A second very interesting question that we can ask ourselves: what is the general trend of the party? Are their ideas polarizing or are their points of view converging?
+      <br><br>
+      TOPIC ANALYSIS (NICKY)<br>
+      Non politicians?
+
+    <br>
+      Can we identify
+    </div>
+    <div style="width: 50%;margin: 0 auto;">
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/5.embed?showlink=false" height="525" width="100%"></iframe>
+    </div>
+    <v-btn @click="scrollMeTo('introduction')">Porto, Portugal</v-btn>
   </div>
 </template>
 
 <script>
+//import Introduction from "./Introduction";
+import Capitolo1 from "./Capitolo1";
+import UseModel from "./UseModel";
 export default {
   name: 'HelloWorld',
+  components: {Capitolo1,UseModel},
   props: {
     msg: String
   },
@@ -55,30 +141,30 @@ export default {
         }
       },
     }
+  },
+  methods:{
+    scrollMeTo(refName) {
+      var element = this.$refs[refName];
+      var top = element.offsetTop;
+      window.scrollTo(0, top);
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 .hsg{
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 1rem;
   box-sizing: content-box;
 }
+li{
+  margin: 10px 0;
+}
+h4{
+  font-size: 1.875rem;
+}
+
 </style>
