@@ -100,13 +100,7 @@
       Can we identify
     </div>
     <div style="width: 100%;margin: 0 auto;">
-      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/5.embed?showlink=false" height="525" width="100%"></iframe>
-    </div>
-    <div style="width: 100%;margin: 0 auto;">
-      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
-    </div>
-    <div style="width: 100%;margin: 0 auto;">
-      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/14.embed?showlink=false" height="525" width="100%"></iframe>
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
     </div>
     <v-btn @click="scrollMeTo('introduction')">Porto, Portugal</v-btn>
   </div>
