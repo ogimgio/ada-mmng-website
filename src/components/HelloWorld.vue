@@ -2,7 +2,7 @@
   <div>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-      Is it possible to analyze politics starting exclusively from the politicians' quotations? Is it possible to extract significant information that allows us to analyze the current situation in depth? Follow us along and we will show our attempt to do so using Quotebank dataset.<br><br>
+      Is it NOT possible to analyze politics starting exclusively from the politicians' quotations? Is it possible to extract significant information that allows us to analyze the current situation in depth? Follow us along and we will show our attempt to do so using Quotebank dataset.<br><br>
       There is nothing that describes a political party better than the quotes of its politicians. In fact, the whole of these quotations is the very vision of the political party. Starting from this reflection, let's analyze American politics starting from the quotes found in the Quotebank dataset.<br>
       In quotebanks there are more than 7 million quotations of American politicians of which more than six million are of about fifteen thousand politicians affiliated to the Democratic Party or the Republican Party. <br><br>
       We have trained a machine learning model to classify these quotes to the corresponding political party. Sentences with fewer than x words do not contain enough meaning and have therefore been discarded. Our model therefore associates a score that varies from 0 (= 100% Republican) to 0.5 (= 100% democratic) to each quotation that is given as an input.
