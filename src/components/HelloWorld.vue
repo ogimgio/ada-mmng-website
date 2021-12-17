@@ -2,28 +2,31 @@
   <div>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-      Is it NOT possible to analyze politics starting exclusively from the politicians' quotations? Is it possible to extract significant information that allows us to analyze the current situation in depth? Follow us along and we will show our attempt to do so using Quotebank dataset.<br><br>
-      There is nothing that describes a political party better than the quotes of its politicians. In fact, the whole of these quotations is the very vision of the political party. Starting from this reflection, let's analyze American politics starting from the quotes found in the Quotebank dataset.<br>
-      In quotebanks there are more than 7 million quotations of American politicians of which more than six million are of about fifteen thousand politicians affiliated to the Democratic Party or the Republican Party. <br><br>
-      We have trained a machine learning model to classify these quotes to the corresponding political party. Sentences with fewer than x words do not contain enough meaning and have therefore been discarded. Our model therefore associates a score that varies from 0 (= 100% Republican) to 0.5 (= 100% democratic) to each quotation that is given as an input.
+      Is it possible to analyze politics starting exclusively from the politicians' quotations? <br>
+      Is it possible to extract significant information that allows us to extract meaningful insights about American politics?<br>
+      Follow us along and we will show our attempt to do so using Quotebank dataset.<br><br>
+      The ensemble of all quotations of the members of a party is the best representation of the ideas and values of that party. In fact, these quotations represent the very vision of the political party. Starting from this reflection, let's analyze American politics starting from the quotes found in the Quotebank dataset.
+      In Quotebank there are more than 7 million quotations of American politicians, among them, more than 6 million are of about 15000 politicians affiliated either to the Democratic Party or the Republican Party. <br><br>
+      We have trained a machine learning model to classify these quotes to the corresponding political party. Our model associates a score that varies from 0 to 1 to each quotation representing the probability that the quote is said by a democrat.
     </div>
     <!--<Introduction ref="introduction"/>-->
     <Capitolo1/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-      <h4>The Question</h4>
-      The most spontaneous question to ask: Can the model understand something? And how good is he at making predictions?<br>
-      Our model needs only 4 quotations to obtain an accuracy greater than 95% on the prediction. In addition, if we look at the nearly 15,000 politicians, the accuracy is 98,?%.<br>
-      For a single quote, the accuracy is around 75%. This value may seem low if you don't consider the fact that the data is noisy. But if we think about it, not all politicians' quotes are about politics per se, so this result is better than it seems.
+      <h4>The model in numbers</h4>
+      The most important question: Can the model understand something? And how good are its predictions?<br>
+      On the test set, our model needs 8 quotations to obtain an accuracy greater than 80% on the prediction. In addition, if we try to classify a politician, the accuracy is 98,?%.<br>
+      For a single quote, the accuracy is around 75%. This value may seem low if you don't consider the fact that the data is noisy. As one might expect, although the majority of the quotes of a politician have to do with politics, not all quotes do.Additionally, some of the quotes might not have enough words for the model to truly understand the context.
       <br><br>
-      <h4>The research</h4>
-      First things first let’s show how some familiar faces are positioned in our model:<br><br>
+      <h4>The model in practice</h4>
+      First things first let’s see how some familiar faces are positioned in our model predictions:<br><br>
       <img :src="require('@/assets/esempio.jpeg')" alt="Snow" style="width: 50%;display: block;
   margin-left: auto;
   margin-right: auto;"/>
       <br><br>
-      Our goal was, given a set of quotes, to be able to correctly classify speakers as either democrats or republicans. To do so, we trained our model on individual quotes that have as labels the party of the speaker of the quotee.<br>
-      As one might expect, although the majority of the quotes of a politician have to do with politics, not all quotes do. Additionally, some of the quotes might not have enough words for the model to truly understand the context. Therefore we asked ourselves the following question: what are the restrictions we have to impose to make a robust prediction of the party a politician is affiliated to? Note that our model still does perform pretty well without restriction (x % on the test set and y% on test_set)<br>
+      We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score reflects a simple idea. The more radical politicians, such as Bernie Sanders, have a higher average score. In fact, their quotations are easier to distinguish from the republican ones for our model. <br><br>
+      
+      To inspect the per-quote accuracy we asked ourselves the following question: what are the restrictions we have to impose to make a robust prediction of the party a politician is affiliated to? Note that our model still does perform pretty well without restriction (x % on the test set and y% on test_set)<br>
       We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
 
       <br><br>IMMAGINE<br><br>
@@ -38,7 +41,7 @@
       </ul>
       <br>
 
-      The other 64% of the misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the ‘avg_prob_dem’ of each misclassified speaker with 95% confidence intervals using bootstrapping:
+      The residual 64% of the misclassified quotes have more than one quote. To better visualize the issue, we decided to plot the ‘avg_prob_dem’ of each misclassified speaker with 95% confidence intervals using bootstrapping:
       <br><br>IMMAGINE<br><br>
       Here we see that x% of these predictions reside in both labels. So the variance of these speakers predictions is too high. So in conclusion: we need to set a minimum number of quotes to make a robust prediction of a speaker.
       <br>
@@ -46,10 +49,9 @@
       IMMAGINE<br><br>
       By setting  the minimum required accuracy at x%, we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 5.<br><br>
 
-      Regarding the accuracy of a prediction with respect to the length of a quote, the plot here below shows that a quote has to have at least for words which are not stop words.
+      Regarding the accuracy of a prediction with respect to the length of a quote, the plot here below shows that a quote has to have at least four non-stop words.
       <br><br>IMMAGINE<br><br>
       DISCUSS:<br>
-      TRENDING WORD (MONO)<br>
       If we visualize the distribution of the scores of the quotes by separating the two classes, we realize that we can separate them into four parts.
       <br><br>IMMAGINE<br><br>
       Starting from the left, an exclusively Republican side, then a predominantly republican side, a predominantly democratic one and finally an exclusively democratic one.
@@ -77,13 +79,16 @@
     <UseModel/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-      study trends (MAURO):
       As we have seen, politicians' scores can be analyzed over time and this allows us to make very interesting analyzes:<br>
-      Who is the democratic politician who is 'polarizing' the most? who instead tends more towards the center?
+      For example, we can be interested in the temporal variation of the political vision of various politicians. In this way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized or who is the Democrat who is taking increasingly moderate positions. To do this we made linear regressions on the time series of the 10 most influential politicians for the two parties and they are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show just click on the name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
       <br><br>
-      A second very interesting question that we can ask ourselves: what is the general trend of the party? Are their ideas polarizing or are their points of view converging?
+      plot
       <br><br>
-      TOPIC ANALYSIS (NICKY)<br>
+      Now we can do the same analysis but for whole parities. To understand if the general ideas of the two parties are polarizing or becoming more similar over time. We plot the trend of the timeseries of the scores of the two parties and the associated linear regressions. 
+      <br><br>
+      plot
+      <br><br>
+      Another very interesting analysis is to see by topic how the distribution of scores within a party varies, and how it varies over time. To do this, we filter the quotations by topic, and look at the associated scores for each parity. Below we show two interesting examples but this analysis could be done much more broadly.<br>
       Non politicians?
 
       <br>
