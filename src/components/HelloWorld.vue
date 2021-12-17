@@ -28,7 +28,7 @@
       For a single quote, the accuracy exceeds 75%. This value may seem low if you don't consider the fact that the data is noisy. As one might expect, although the majority of the quotes of a politician have to do with politics, not all quotes do. Additionally, some of the quotes might not have enough words for the model to truly understand the context.
       <br><br>
       <h4>The model in practice</h4>
-      First things first let’s see how some familiar faces are positioned in our model predictions (mouse over the graph to see names associated to each curve):<br><br>
+      First things first, let's see how some familiar faces are positioned in our model predictions (mouse over the graph to see names associated to each curve):<br><br>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/19.embed?show_link=false" height="525" width="100%"></iframe>
       </div>
@@ -68,7 +68,7 @@
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/34.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
-      By setting  the minimum required accuracy at 92.5% we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 5.<br><br>
+      By setting  the minimum required accuracy at 92.5% we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 4.<br><br>
 
       Regarding the accuracy of a prediction with respect to the length of a quote, the plot here below shows that a quote has to have at least four non-stop words.
       <div style="width: 100%;margin: 0 auto;">
@@ -98,12 +98,13 @@
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
-      We showed that the model is able to accurately classify the political party to which a politician belongs and that 4 quotations are sufficient for this purpose.
-      For this reason, if a politician has many associated quotes,
+
+      So, our model is able to accurately classify the political party to which a politician belongs and 4 quotations of sufficient length (4 meaningful words) are enough to accurately predict a speaker's political party.
+      Thus, if a politician has many associated quotes
       we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
-      By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
-      in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)<br><br>
-      Now that we have seen the models particularity, lets look at the the distribution of the political score of all the politician on our dataset.
+      By themselves the quotations with their scores are already time-series, which we resample, for example with a monthly frequency,
+      in order to decrease it's political score variance. This time series will be really useful for extracting meaningful insights about American politics. (see next chapter)<br><br>
+      Now that we have seen the models strengths and particularities, lets look at the the distribution of the political score of all the politician on our dataset.
 
     </div>
     <div class="col-12" style="margin-right: auto;
