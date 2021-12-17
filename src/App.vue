@@ -42,10 +42,18 @@
         <v-card-text class="white--text pt-0" style="text-align: center">
           <div style="display: inline-block;">
             <div style="font-style: italic;">Authors:<br></div>
-          <div style="text-align: left">Gioele Monopoli<v-btn class="white--text" icon href="https://www.linkedin.com/in/gioele-monopoli"><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
-          <div style="text-align: left">Mauro Leidi<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
-          <div style="text-align: left">Micheal Rust<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
-          <div style="text-align: left">Nicky Baldwin<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+          <div style="text-align: left">Gioele Monopoli<v-btn class="white--text" icon href="https://www.linkedin.com/in/gioele-monopoli"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
+            <v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">mdi-github</v-icon></v-btn>
+            <br></div>
+          <div style="text-align: left">Mauro Leidi<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
+            <v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">mdi-github</v-icon></v-btn>
+            <br></div>
+          <div style="text-align: left">Micheal Roust<v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
+            <v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">mdi-github</v-icon></v-btn>
+            <br></div>
+          <div style="text-align: left">Nicky Baldwin<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
+            <v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">mdi-github</v-icon></v-btn>
+            <br></div>
           </div>
         </v-card-text>
 

@@ -108,7 +108,7 @@
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
     </div>
       Another very interesting analysis is to see by topic how the distribution of scores within a party varies, and how it varies over time. To do this, we filter the quotations by topic, and look at the associated scores for each parity. Below we show two interesting examples but this analysis could be done much more broadly. <br>
-      More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through examples, but this can be performed on any kind of topic. 
+      More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through examples, but this can be performed on any kind of topic.
       Performing the analysis on the set of words ['climate','change'], we find the following:<br>
       First of all, let's plot the distribution of the political scores of both parties on the topic:<br>
       -----DISTRIBUTION PLOT------<br>
@@ -151,15 +151,18 @@
       INTERVAL4 QUOTE: (e.g. "")<br>
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
-    </div>
-    <div style="width: 100%;margin: 0 auto;">
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
-    </div>
-    <div style="width: 100%;margin: 0 auto;">
-    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed" height="525" width="100%"></iframe>
-    </div>
-    <div style="width: 100%;margin: 0 auto;">
-    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/34.embed" height="525" width="100%"></iframe>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
+      </div>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed" height="525" width="100%"></iframe>
+      </div>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/34.embed" height="525" width="100%"></iframe>
+      </div>
+      <div style="width: 100%;margin: 0 auto;">
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed" height="525" width="100%"></iframe>
+      </div>
     </div>
   </div>
 </template>
