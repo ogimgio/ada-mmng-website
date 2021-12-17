@@ -11,7 +11,7 @@
       We have trained a machine learning model to classify these quotes to the corresponding political party. Our model associates a score that varies from 0 to 1 to each quotation representing the probability that the quote is said by a democrat.
     </div>
     <!--<Introduction ref="introduction"/>-->
-    <Capitolo1 id="expl"/>
+    <Capitolo1 id="exploration"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
       <h4>The model in numbers</h4>
@@ -24,8 +24,6 @@
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/19.embed?show_link=false" height="525" width="100%"></iframe>
       </div>
-  margin-left: auto;
-  margin-right: auto;"/>
       <br><br>
 
       We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score reflects the following simple idea: the more radical politicians, such as Bernie Sanders, have a higher average score. This is due to the fact that, for our model, their quotations are easier to distinguish from the opposite party ones. Now we have an interpretation for this political score that we can keep in mind for future analysis. <br><br>
