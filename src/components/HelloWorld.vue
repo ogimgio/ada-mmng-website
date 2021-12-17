@@ -168,25 +168,24 @@
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
       </div>
-      Let's look now at a topic where democrats and republicans are strongly divided: income tax.<br>
-      By choosing the same set of words ['abortion'] we perform a similar analysis. Here are our results:<br>
+      Let's look now at a topic where democrats and republicans are strongly divided: abortion.<br>
+      By choosing the same set of words ['abortion','law'] we perform a similar analysis. Before reading the discussion you could try to take conclusion by yourself just by looking the plots. Here are all our results:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
         <img  width="80%" :src="require('@/assets/images_nicky/Distribution_abortion_law.png')" alt="distribution"/>
       </div>
-      --ALL PLOTS---<br>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe></div><br>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/53.embed" height="525" width="100%"></iframe></div><br>
 
       Here we can see that the parties are strongly divided, the political scores of the republicans and democrats quotes are polarized around 0 and 1 respectively. Around the median, which in this case more or less represents the general opinion of the party (see distribution) we see that republicans tend to be anti-abortion whereas democrats tend to be pro-abortion.<br>
-      By showing the quotes along the political score axis, we see the typical scores in all the intervals<br>
+      By showing the quotes along the political score axis, we see the typical scores in all the intervals:<br>
       INTERVAL1 QUOTE: (e.g. "I do want to see the number of abortion go down")<br>
       INTERVAL2 QUOTE: (e.g. "... given the potential of abortion to become a tool for genetic manipulation, the court will need to confront ...")<br>
       INTERVAL3 QUOTE: (e.g. "... it's inconsistent and will lead to a ban of abortion in Alabama, even for victims of incest or rape ...")<br>
       INTERVAL4 QUOTE: (e.g. "... it's time to pass state laws to protect womans 's constitutional right of abortion...")<br>
-      We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
-      Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
+      We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion (which should not be surprising).<br>
+      Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided. We also see that there are more quotation of rebublicans that are simultaneously containing the words abortion and law.<br>
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
     </div>
   </div>
