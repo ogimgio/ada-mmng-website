@@ -10,7 +10,7 @@
       We have trained a machine learning model to classify these quotes to the corresponding political party. Our model associates a score that varies from 0 to 1 to each quotation representing the probability that the quote is said by a democrat.
     </div>
     <!--<Introduction ref="introduction"/>-->
-    <Capitolo1/>
+    <Capitolo1 id="expl"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
       <h4>The model in numbers</h4>
@@ -24,8 +24,8 @@
   margin-left: auto;
   margin-right: auto;"/>
       <br><br>
+
       We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score reflects the following simple idea: the more radical politicians, such as Bernie Sanders, have a higher average score. This is due to the fact that, for our model, their quotations are easier to distinguish from the opposite party ones. Now we have an interpretation for this political score that we can keep in mind for future analysis. <br><br>
-      
       To inspect the per-quote accuracy we asked ourselves the following question: what are the restrictions we have to impose to make a robust prediction of the party a politician is affiliated to? Note that our model still does perform pretty well without restriction (x % on the test set and y% on test_set)<br>
       We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
 
@@ -53,7 +53,9 @@
       <br><br>IMMAGINE<br><br>
       DISCUSS:<br>
       If we visualize the distribution of the scores of the quotes by separating the two classes, we realize that we can separate them into four parts.
-      <br><br>IMMAGINE<br><br>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+      <img  width="80%" :src="require('@/assets/graphs/img_distribution.png')" alt="distribution"/>
+      </div>
       Starting from the left, an exclusively Republican side, then a predominantly republican side, a predominantly democratic one and finally an exclusively democratic one.
       Starting from this idea, we took an interest in trending words by section and the result is very interesting and significant.
       First, let's look at the trending words that are specific to each area:
@@ -61,11 +63,15 @@
       community,health country,city, new and for the exclusively republican we find american,government,trump and states.
       With the exception of the word 'new' these words are extremely significant for the vision of parties:
       on the one hand they are words related to the homeland and patriotism while on the other hand they are words related to the community, people and health.
-      <br><br>IMMAGINE<br><br>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+      <img :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
+      </div>
       Now let's look at the words that are shared by several areas at the same time.Here, too, the speech just made is significantly reflected, in fact,
       although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
       and of Democrats for those that concern the people.
-      <br><br>IMMAGINE<br><br>
+      <div style="margin: 25px 0 25px 0;text-align: center">
+      <img :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
+      </div>
       OVER TIME (MAURO):
       We showed that the model is able to accurately classify the political party to which a politician belongs and that ? quotations are sufficient for this purpose.
       For this reason, if a politician has many associated quotes,
@@ -74,7 +80,7 @@
       in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)
       <br><br>IMMAGINE<br><br>
     </div>
-    <UseModel/>
+    <UseModel id="model"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
       Let's now use the time series to perform some interesting analyzes:<br>
@@ -82,7 +88,7 @@
       <br><br>
       plot
       <br><br>
-      Now we can do the same analysis but for whole parities. To understand if the general ideas of the two parties are polarizing or becoming more similar over time. We plot the trend of the timeseries of the scores of the two parties and the associated linear regressions. 
+      Now we can do the same analysis but for whole parities. To understand if the general ideas of the two parties are polarizing or becoming more similar over time. We plot the trend of the timeseries of the scores of the two parties and the associated linear regressions.
       <br><br>
       plot
       <br><br>
@@ -91,8 +97,14 @@
       <br>
       Can we identify
     </div>
-    <div style="width: 50%;margin: 0 auto;">
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/5.embed?showlink=false" height="525" width="100%"></iframe>
+    <div style="width: 100%;margin: 0 auto;">
+      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/5.embed?showlink=false" height="525" width="100%"></iframe>
+    </div>
+    <div style="width: 100%;margin: 0 auto;">
+      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
+    </div>
+    <div style="width: 100%;margin: 0 auto;">
+      <iframe class="idgraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/14.embed?showlink=false" height="525" width="100%"></iframe>
     </div>
     <v-btn @click="scrollMeTo('introduction')">Porto, Portugal</v-btn>
   </div>
@@ -167,5 +179,8 @@ li{
 }
 h4{
   font-size: 1.875rem;
+}
+.idgraph {
+  -webkit-transform: scale(0.75);
 }
 </style>
