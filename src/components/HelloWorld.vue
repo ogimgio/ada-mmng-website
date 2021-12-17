@@ -146,10 +146,10 @@
 
       Here we can see that the parties are strongly divided, the political scores of the republicans and democrats quotes are polarized around 0 and 1 respectively. Around the median, which in this case more or less represents the general opinion of the party (see distribution) we see that republicans tend to be anti-abortion whereas democrats tend to be pro-abortion.<br>
       By showing the quotes along the political score axis, we see the typical scores in all the intervals<br>
-      INTERVAL1 QUOTE: (e.g. "")<br>
-      INTERVAL2 QUOTE: (e.g. "")<br>
-      INTERVAL3 QUOTE: (e.g. "")<br>
-      INTERVAL4 QUOTE: (e.g. "")<br>
+      INTERVAL1 QUOTE: (e.g. "I do want to see the number of abortion go down")<br>
+      INTERVAL2 QUOTE: (e.g. "... given the potential of abortion to become a tool for genetic manipulation, the court will need to confront ...")<br>
+      INTERVAL3 QUOTE: (e.g. "... it's inconsistent and will lead to a ban of abortion in Alabama, even for victims of incest or rape ...")<br>
+      INTERVAL4 QUOTE: (e.g. "... it's time to pass state laws to protect womans 's constitutional right of abortion...")<br>
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
       <div style="width: 100%;margin: 0 auto;">
