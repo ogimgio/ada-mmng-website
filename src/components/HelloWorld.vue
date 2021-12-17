@@ -5,15 +5,28 @@
       <div style="text-align: center; font-style: italic">
       Is it possible to analyze politics starting exclusively from the politicians' quotations? <br>
       Is it possible to extract significant information that allows us to extract meaningful insights about American politics?<br>
-      Follow us along and we will show our attempt to do so using Quotebank dataset.</div><br><br>
-      The ensemble of all quotations of the members of a party is the best representation of the ideas and values of that party. In fact, these quotations represent the very vision of the political party. Starting from this reflection, let's analyze American politics starting from the quotes found in the Quotebank dataset.
-      In Quotebank there are more than 7 million quotations of American politicians, among them, more than 6 million are of about 15000 politicians affiliated either to the Democratic Party or the Republican Party. <br><br>
-      We have trained a machine learning model to classify these quotes to the corresponding political party. Our model associates a score that varies from 0 to 1 to each quotation representing the probability that the quote is said by a democrat.
+      Follow us along on our journey where we apply data analysis techniques to better understand political trends of the past 5 years.
+      The ensemble of all quotations of the members of a party is an excellent representation of the ideas and values of that party. In fact, these quotations represent the very vision of the political party. Starting from this reflection, let's analyze American politics starting from the quotes found in the Quotebank dataset.
+      In Quotebank there are more than 7 million quotations of American politicians, among them, more than 6 million are of can be associated to 15000 politicians affiliated either to the Democratic Party or the Republican Party. <br><br>
+
+      We have trained a machine learning model to predict the political affiliation of the speaker of a quote. With a rather simple model we have managed to achieve a 75% accuracy, which is quite a surprising result! This goes to show how polarized American politics have become nowadays. Both parties often have very clearly opposite opinions of topics such as climate change or abortion. <br><br>
+
+      We will also use the our model and data to explore how a politician's opinions align with their party and perform time series analysis to analyse their evolution over time. <br><br>
+
+      TODO maybe add some more into stuff.
+
+      So hop on and come see the surprising power of data analysis in our modern day and age!
+
+      <!-- As we will show later some there are multiple topics that show a clear polarization between the two political parties
+      We have trained a machine learning model to classify these quotes to the corresponding political party. Our model associates a score that varies from 0 to 1 to each quotation representing the probability that the quote is said by a democrat. -->
     </div>
     <!--<Introduction ref="introduction"/>-->
     <Capitolo1 id="exploration"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
+
+      <h3>Predicting the political affinity of quotes</h3>
+
       <h4>The model in numbers</h4>
       The most important question: Can the model understand something? And how good are its predictions?<br>
       On the test set, our model needs 8 quotations to obtain an accuracy greater than 80% on the prediction. In addition, if we try to classify a politician, the accuracy is 98,?%.<br>
