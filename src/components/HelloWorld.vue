@@ -28,7 +28,7 @@
       For a single quote, the accuracy exceeds 75%. This value may seem low if you don't consider the fact that the data is noisy. As one might expect, although the majority of the quotes of a politician have to do with politics, not all quotes do. Additionally, some of the quotes might not have enough words for the model to truly understand the context.
       <br><br>
       <h4>The model in practice</h4>
-      First things first let’s see how some familiar faces are positioned in our model predictions (mouse over the graph to see names associated to each curve):<br><br>
+      First things first, let's see how some familiar faces are positioned in our model predictions (mouse over the graph to see names associated to each curve):<br><br>
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/19.embed?show_link=false" height="525" width="100%"></iframe>
       </div>
@@ -68,15 +68,15 @@
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/34.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
-      By setting  the minimum required accuracy at 92.5% we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 5.<br><br>
+      By setting  the minimum required accuracy at 92.5% we find that the minimum number of quotes a speaker needs for the model to make a robust prediction at 4.<br><br>
 
       Regarding the accuracy of a prediction with respect to the length of a quote, the plot here below shows that a quote has to have at least four non-stop words.
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/36.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
+      <h4>Translating political scores into words</h4>
 
       Next we'll visualize the distribution of the scores of the quotes by separating the two classes.
-
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img  width="80%" :src="require('@/assets/graphs/img_distribution.png')" alt="distribution"/>
       </div>
@@ -86,24 +86,26 @@
       First, let's look at the trending words that are specific to each interval:
       we immediately notice that they are most present for the exclusive republican and democratic intervals. Specifically in the exclusively democratic zone we find the following words:
       community, health, country, city, new. For the exclusively republican we find instead: american, government, trump and states.
-      With the exception of the word 'new' these words are extremely significant for the vision of parties:
-      on the one hand they are words related to the homeland and patriotism (Democrats) while on the other hand they are words related to the community, people and health (Republicans).
-      <div style="margin: 25px 0 25px 0px;text-align: center">
-      <img width="70%" :src="require('@/assets/graphs/bro.png')" alt="words(unique)"/>
+      With the exception of the word 'new' these words are extremely significant for the vision of parties.
+      Republican's have common words related to the homeland and patriotism, while Democrats have common words related to community, people and health.
+
+      <div style="margin: 25px 0 25px 0;text-align: center">
+      <img width="80%" :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
       </div>
-      Now let's look at the words that are shared by several areas at the same time. Here, too, the speech just made is significantly reflected, in fact,
-      although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
-      and of Democrats for those that concern the people.
+
+      Now let's look at the words that are shared by several intervals. Here too we see some trends. Words that concern "America" are more on the Republican side of the spectrum, whereas words that concern "People" are more on the Democratic side.
+
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
-      OVER TIME (MAURO):
-      We showed that the model is able to accurately classify the political party to which a politician belongs and that 4 quotations are sufficient for this purpose.
-      For this reason, if a politician has many associated quotes,
+
+      So, our model is able to accurately classify the political party to which a politician belongs and 4 quotations of sufficient length (4 meaningful words) are enough to accurately predict a speaker's political party.
+      Thus, if a politician has many associated quotes
       we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
-      By themselves the quotations with their scores are already timeseries, which we resample, for example with a monthly frequency,
-      in order to decrease it's political score variance. This time series will be really usefull for the extraction meaningful insights about American politics. (see next chapter)<br><br>
-      Now that we have seen the models particularity, lets look at the the distribution of the political score of all the politician on our dataset.
+      By themselves the quotations with their scores are already time-series, which we resample, for example with a monthly frequency,
+      in order to decrease it's political score variance. This time series will be really useful for extracting meaningful insights about American politics. (see next chapter)<br><br>
+      Now that we have seen the models strengths and particularities, lets look at the the distribution of the political score of all the politician on our dataset.
+
     </div>
     <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 10px 0 0 0;max-width: 1050px;">
@@ -119,6 +121,7 @@
     <UseModel id="model"/>
     <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 20px;max-width: 850px;">
+      <h4>Time series analysis</h4>
       Let's now use the time series to perform some interesting analysis:<br>
       For example, we could be interested in the temporal variation of the political vision of various politicians. This way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized overtime or who is the Democrat who is taking increasingly moderate positions. To do this we fit linear regressions to the time series of the 10 most influential politicians for the two parties. The results are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show a single politician just click on his name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
       <br><br>
@@ -130,6 +133,7 @@
       <div style="width: 100%;margin: 0 auto;text-align: center">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
     </div>
+    <h4>Topic specific analysis: Climate change</h4>
       Let's now observe how the distribution of scores within a party varies overtime but focusing our attention on single by topics. To do this, we filter the quotations by topic, and look at the associated scores for each party. Below we show two interesting examples but note that this analysis could be done much more broadly (your fantasy is the limit). <br>
       More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through two beautiful examples that shows the power of this technique.
       Performing the analysis on the set of words ['climate','change'], we find the following:<br>
@@ -178,6 +182,7 @@
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
       </div>
+      <h4>Topic specific analysis: Abortion </h4>
       Let's look now at a topic where democrats and republicans are strongly divided: abortion.<br>
       By choosing the same set of words ['abortion','law'] we perform a similar analysis. Before reading the discussion you could try to take conclusion by yourself just by looking the plots. Here are all our results:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
@@ -197,6 +202,21 @@
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion (which should not be surprising).<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided. We also see that there are more quotation of rebublicans that are simultaneously containing the words abortion and law.<br>
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
+      <h4>What comes next?</h4>
+      First the ADA exam. Then, we can start thinking about the various improvements needed:
+      <ul style="padding-left: 50px">
+        <li>Including word embedding (eg: glove embedding)</li>
+        <li>Try again to train a neural network</li>
+        <li>Find an approach to filter non-political quotes from training data</li>
+        <li>and much more...</li>
+      </ul>
+      If you want to give it a try it's extremely simple:
+      <ul style="padding-left: 50px">
+        <li>Download the pickled version of our Vectorizer and Model from google drive</li>
+        <li>Load them using pickle</li>
+        <li>Start making predictions</li>
+        <li>and much more...</li>
+      </ul>
     </div>
   </div>
 </template>
