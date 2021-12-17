@@ -36,6 +36,7 @@
       We immediately see that the model manages to separate politicians into the two categories. What's even more interesting is that the score is also correlated with how strongly a politician's opinions veer towards on party or another: the more radical politicians, such as Bernie Sanders, have average scores closer to the extremes.<br>
       Now that we have an interpretation for this political score that we can keep in mind for future analyses. Notice the large zig-zag on the graph, that is the time-series of Alexandria Ocasio-Cortez. In the first few years she has a high variance and at around 2018 her curve stabilizes and joins the rest of the democrats. In fact, she only became a prominent American politician in 2018, before that she much fewer quotes associated to her, which perfectly explains the high variance before 2018 and that how after that she indeed joins her party trends.<br><br>
 
+      <h4>About misclassification and robustness</h4>
       We know our per-quote accuracy and also that our model functions well for popular politicians who have plenty of quotes to average our predictions over. <br>
       Naturally, our the next question we ask ourselves is: what are the restrictions we have to impose to make a robust prediction of which party a politician is affiliated to? Note that our model still does perform pretty well without restriction. <br>
       We first started to analyze our misclassified speakers and plotting the distribution of the number of quotes a misclassified speaker has:
