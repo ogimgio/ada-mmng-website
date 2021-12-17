@@ -24,9 +24,6 @@
     <Capitolo1 id="exploration"/>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
-
-      <h3>Predicting the political affinity of quotes</h3>
-
       <h4>The model in numbers</h4>
       The most important question: Can the model understand something? And how good are its predictions?<br>
       On the test set, our model needs 8 quotations to obtain an accuracy greater than 80% on the prediction. In addition, if we try to classify a politician, the accuracy is 98,?%.<br>
@@ -44,7 +41,9 @@
 
       <br><br>IMMAGINE<br><br>
       Taking a closer look, we realize that 46% of our misclassified politicians have only one quote associated. We plotted these on the following graph. You can place your mouse over quotes to see what they say:
-      <br><br>IMMAGINE<br><br>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/29.embed?showlink=false" height="1000" width="100%"></iframe>
+      </div>
       Among these quotes, we can notice 4 types of quotes:
       <ul style="padding-left: 50px">
         <li>quotes that lack context (e.g. “ “), please note that the quote are empty because in our preprocessing we perform stop-word removal.</li>
@@ -163,6 +162,22 @@
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed" height="525" width="100%"></iframe>
       </div>
+
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/44.embed" height="525" width="100%"></iframe>
+      </div>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/46.embed" height="525" width="100%"></iframe>
+      </div>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="100%" width="100%"></iframe>
+      </div>
+      <div style="width: 100%;margin: 0 auto;">
+        <iframe width="100%" height="500" style="border:none;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
+      </div>
+    </div>
+    <div style="width: 100%;margin: 0 auto;">
+      <iframe width="100%" height="500" style="border:none;" scrolling="no" src="//plotly.com/~ogim/46.embed"></iframe>
     </div>
   </div>
 </template>

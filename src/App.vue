@@ -8,6 +8,7 @@
             contain
         ></v-img></a>
         <div class="topnav-right">
+          <a href="#introduction">American Data Analysis</a>
           <a href="#exploration">Exploration of results</a>
           <a href="#model">How can we use our model?</a>
         </div>
@@ -16,7 +17,7 @@
       </div>
     </div>
     <div class="container">
-      <img alt="Vue logo" src="./assets/main_img_rep_dem.jpeg" style=" width: 100%;
+      <img id="introduction" alt="Vue logo" src="./assets/main_img_rep_dem.jpeg" style=" width: 100%;
   z-index: 0;height: 500px;object-fit: cover;" class="img-wrap"/>
       <!--<h1 class="white--text mb-2 display-1 text-xs-center" style="font-weight: 900; text-shadow: 3px 2px #000000">The social network for epic content</h1>-->
       <h1 style="font-size: 75px; text-align: center;color: white;" class="centered">
@@ -43,16 +44,16 @@
           <div style="display: inline-block;">
             <div style="font-style: italic;">Authors:<br></div>
           <div style="text-align: left">Gioele Monopoli<v-btn class="white--text" icon href="https://www.linkedin.com/in/gioele-monopoli"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
-            <v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">mdi-github</v-icon></v-btn>
+            <v-btn class="white--text" icon href="https://github.com/ogimgio"><v-icon size="24px">mdi-github</v-icon></v-btn>
             <br></div>
-          <div style="text-align: left">Mauro Leidi<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
-            <v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">mdi-github</v-icon></v-btn>
+          <div style="text-align: left">Mauro Leidi<v-btn class="white--text" icon href="https://www.linkedin.com/in/mauroleidi/"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
+            <v-btn class="white--text" icon href="https://github.com/MauroLeidi"><v-icon size="24px">mdi-github</v-icon></v-btn>
             <br></div>
           <div style="text-align: left">Micheal Roust<v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
-            <v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">mdi-github</v-icon></v-btn>
+            <v-btn class="white--text" icon href="https://github.com/michaelroust"><v-icon size="24px">mdi-github</v-icon></v-btn>
             <br></div>
-          <div style="text-align: left">Nicky Baldwin<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
-            <v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">mdi-github</v-icon></v-btn>
+          <div style="text-align: left">Nicolas Baldwin<v-btn class="white--text" icon href="https://www.linkedin.com/in/nicolas-baldwin-75832017b/"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
+            <v-btn class="white--text" icon href="https://github.com/chabala98"><v-icon size="24px">mdi-github</v-icon></v-btn>
             <br></div>
           </div>
         </v-card-text>
