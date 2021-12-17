@@ -74,11 +74,10 @@
       <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/36.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
+      <h4>Translating political scores into words</h4>
+      Let's visualize the distribution of the scores of the quotes by separating the two classes.
 
       Next we'll visualize the distribution of the scores of the quotes by separating the two classes.
-
-
-
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img  width="80%" :src="require('@/assets/graphs/img_distribution.png')" alt="distribution"/>
       </div>
