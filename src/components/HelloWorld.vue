@@ -107,10 +107,50 @@
       <div style="width: 100%;margin: 0 auto;text-align: center">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
     </div>
-      Another very interesting analysis is to see by topic how the distribution of scores within a party varies, and how it varies over time. To do this, we filter the quotations by topic, and look at the associated scores for each parity. Below we show two interesting examples but this analysis could be done much more broadly.<br>
-      Non politicians?
-      <br>
-      Can we identify
+      Another very interesting analysis is to see by topic how the distribution of scores within a party varies, and how it varies over time. To do this, we filter the quotations by topic, and look at the associated scores for each parity. Below we show two interesting examples but this analysis could be done much more broadly. <br>
+      More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through examples, but this can be performed on any kind of topic. 
+      Performing the analysis on the set of words ['climate','change'], we find the following:<br>
+      First of all, let's plot the distribution of the political scores of both parties on the topic:<br>
+      -----DISTRIBUTION PLOT------<br>
+      The distribution shows us that the democrats generally all have the same opinion on the subject whereas the republican party is very undecided.<br><br>
+
+      To understand the parties's opinion on the subject, let's show some quotes that are close to the party's median political score on the subject.<br>
+      -----PLOT OF QUOTES CLOSE TO MEDIAN<br>
+      The first thing we see is that the median political score of the republican is not that relevant because the distribution of the party's quotes is more or less uniform. So we will have to find a better way to understand the party's opinion on the topic. However, we can see that around this value, republicans tend to say climate change is not a priority.<br>
+      For, the democrats, this analysis is more relevant because the density of quotes around the median political score is high. If we take a closer look we can see that the quotes say that climate change exists and that we must act on it. <br>
+      (e.g. "")<br>
+
+      (e.g "")<br>
+
+      Now that we have seen quotes close to the median, let's look at the various opinions both parties have by showing quotes all along the political score axis. To do so, we separate our quotes into 4 intervals:<br>
+      interval 1: political score of quote = [0,0.25[<br>
+      interval 2: political score of quote = [0,0.5[<br>
+      interval 3: political score of quote = [0,0.75[<br>
+      interval 4: political score of quote = [0.75,0.1]<br>
+      We then show a sample of the quotes that are within that interval.<br>
+      --- SHOW PLOT OF QUOTES PER INTERVAL<br>
+      INTERVAL1 QUOTE: (e.g. "")<br>
+      INTERVAL2 QUOTE: (e.g. "")<br>
+      INTERVAL3 QUOTE: (e.g. "")<br>
+      INTERVAL4 QUOTE: (e.g. "")<br>
+
+      We observe that the trend is that the lower political score, the more politicians tend to deny the existence of climate change say that we should do nothing about it. Whereas, the higher the political score, the more politicians tend to say that climate change exists and that acting on it is a priority.<br>
+
+      Finally, we plot the average political score of the politicians by averaging their quotes. This allows us to see where a politician stands on the subject and how divided a party is. The democratic party tends to all agree that climate change exists and that we should act on it. On the other hand, Republicans are divided on the subject. Some tend to agree with democrats, and others strongly disagree and deny their existence.<br>
+
+      Let's look now at a topic where democrats and republicans are strongly divided: income tax.<br>
+      By choosing the same set of words ['abortion'] we perform a similar analysis. Here are our results:<br>
+      ---PLOT DISTRIBUTION----<br>
+      --ALL PLOTS---<br>
+
+      Here we can see that the parties are strongly divided, the political scores of the republicans and democrats quotes are polarized around 0 and 1 respectively. Around the median, which in this case more or less represents the general opinion of the party (see distribution) we see that republicans tend to be anti-abortion whereas democrats tend to be pro-abortion.<br>
+      By showing the quotes along the political score axis, we see the typical scores in all the intervals<br>
+      INTERVAL1 QUOTE: (e.g. "")<br>
+      INTERVAL2 QUOTE: (e.g. "")<br>
+      INTERVAL3 QUOTE: (e.g. "")<br>
+      INTERVAL4 QUOTE: (e.g. "")<br>
+      We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion<br>
+      Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided.<br>
     </div>
     <div style="width: 100%;margin: 0 auto;">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
