@@ -97,7 +97,6 @@
       <div style="margin: 25px 0 25px 0;text-align: center">
       <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
-      OVER TIME (MAURO):
       We showed that the model is able to accurately classify the political party to which a politician belongs and that 4 quotations are sufficient for this purpose.
       For this reason, if a politician has many associated quotes,
       we are able to group them into small groups of quotes close in time and create a time-series that represents the political vision of that politician.
@@ -119,6 +118,7 @@
     <UseModel id="model"/>
     <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 20px;max-width: 850px;">
+      <h4>Time series analysis</h4>
       Let's now use the time series to perform some interesting analysis:<br>
       For example, we could be interested in the temporal variation of the political vision of various politicians. This way we can find out, for example, who is the Republican politician whose ideas are becoming more polarized overtime or who is the Democrat who is taking increasingly moderate positions. To do this we fit linear regressions to the time series of the 10 most influential politicians for the two parties. The results are presented in the following interactive plot. To view a single politician just double click on his name, to hide / show a single politician just click on his name. By passing with the mouse we can see the slope expressed as score / months which indicates the change in political vision.
       <br><br>
@@ -130,6 +130,7 @@
       <div style="width: 100%;margin: 0 auto;text-align: center">
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/16.embed?showlink=false" height="525" width="100%"></iframe>
     </div>
+    <h4>Topic specific analysis: Climate change</h4>
       Let's now observe how the distribution of scores within a party varies overtime but focusing our attention on single by topics. To do this, we filter the quotations by topic, and look at the associated scores for each party. Below we show two interesting examples but note that this analysis could be done much more broadly (your fantasy is the limit). <br>
       More specifically, the question we are trying to answer is if, provided a set of words that portrait a given topic, we can identify the general opinions of the party and other opinions that there might be. This analysis is performed on quotes that include all of the provided words. We will show this analysis through two beautiful examples that shows the power of this technique.
       Performing the analysis on the set of words ['climate','change'], we find the following:<br>
@@ -178,6 +179,7 @@
       <div style="width: 100%;margin: 0 auto;">
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
       </div>
+      <h4>Topic specific analysis: Abortion </h4>
       Let's look now at a topic where democrats and republicans are strongly divided: abortion.<br>
       By choosing the same set of words ['abortion','law'] we perform a similar analysis. Before reading the discussion you could try to take conclusion by yourself just by looking the plots. Here are all our results:<br>
       <div style="margin: 25px 0 25px 0;text-align: center">
