@@ -88,8 +88,8 @@
       community, health, country, city, new. For the exclusively republican we find instead: american, government, trump and states.
       With the exception of the word 'new' these words are extremely significant for the vision of parties:
       on the one hand they are words related to the homeland and patriotism (Democrats) while on the other hand they are words related to the community, people and health (Republicans).
-      <div style="margin: 25px 0 25px 0;text-align: center">
-      <img width="80%" :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
+      <div style="margin: 25px 0 25px 0px;text-align: center">
+      <img width="70%" :src="require('@/assets/graphs/bro.png')" alt="words(unique)"/>
       </div>
       Now let's look at the words that are shared by several areas at the same time. Here, too, the speech just made is significantly reflected, in fact,
       although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
