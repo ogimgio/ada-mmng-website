@@ -2,9 +2,10 @@
   <div>
     <div class="col-12" ref="introduction" style="margin-right: auto;
     margin-left: auto;padding: 50px 15px 75px;max-width: 850px;">
+      <div style="text-align: center; font-style: italic">
       Is it possible to analyze politics starting exclusively from the politicians' quotations? <br>
       Is it possible to extract significant information that allows us to extract meaningful insights about American politics?<br>
-      Follow us along and we will show our attempt to do so using Quotebank dataset.<br><br>
+      Follow us along and we will show our attempt to do so using Quotebank dataset.</div><br><br>
       The ensemble of all quotations of the members of a party is the best representation of the ideas and values of that party. In fact, these quotations represent the very vision of the political party. Starting from this reflection, let's analyze American politics starting from the quotes found in the Quotebank dataset.
       In Quotebank there are more than 7 million quotations of American politicians, among them, more than 6 million are of about 15000 politicians affiliated either to the Democratic Party or the Republican Party. <br><br>
       We have trained a machine learning model to classify these quotes to the corresponding political party. Our model associates a score that varies from 0 to 1 to each quotation representing the probability that the quote is said by a democrat.
@@ -20,7 +21,9 @@
       <br><br>
       <h4>The model in practice</h4>
       First things first let’s see how some familiar faces are positioned in our model predictions:<br><br>
-      <img :src="require('@/assets/esempio.jpeg')" alt="Snow" style="width: 50%;display: block;
+      <div style="width: 100%;margin: 0 auto;">
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/19.embed?show_link=false" height="525" width="100%"></iframe>
+      </div>
   margin-left: auto;
   margin-right: auto;"/>
       <br><br>
@@ -64,13 +67,13 @@
       With the exception of the word 'new' these words are extremely significant for the vision of parties:
       on the one hand they are words related to the homeland and patriotism while on the other hand they are words related to the community, people and health.
       <div style="margin: 25px 0 25px 0;text-align: center">
-      <img :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
+      <img width="80%" :src="require('@/assets/graphs/img_1(unique).png')" alt="words(unique)"/>
       </div>
       Now let's look at the words that are shared by several areas at the same time.Here, too, the speech just made is significantly reflected, in fact,
       although these words are present in all areas, we can see a greater tendency of Republicans towards words that concern America,
       and of Democrats for those that concern the people.
       <div style="margin: 25px 0 25px 0;text-align: center">
-      <img :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
+      <img width="80%" :src="require('@/assets/graphs/img_1(shared).png')" alt="words(shared)"/>
       </div>
       OVER TIME (MAURO):
       We have seen that the model is able to accurately classify the political party to which a politician belongs.

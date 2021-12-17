@@ -26,6 +26,34 @@
     </div>
     <!--<img alt="Vue logo" src="./assets/main_img_rep_dem.jpeg" style="margin-bottom: 50px;z-index: 1" class="img-wrap">-->
     <HelloWorld/>
+    <v-footer
+        dark
+        padless
+    >
+      <v-card
+          flat
+          tile
+          class="indigo lighten-1 white--text text-center flex justify-center"
+          style="min-width: 100%;"
+      >
+        <v-card-text>
+        </v-card-text>
+
+        <v-card-text class="white--text pt-0">
+          <div style="font-style: italic">Authors:<br></div>
+          <div>Gioele Monopoli<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+          <div class="row">Mauro Leidi<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+          <div class="row">Micheal Rust<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+          <div class="row">Nicky Baldwin<v-btn class="white--text" icon><v-icon size="24px">{{linkedin}}</v-icon></v-btn><br></div>
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-text class="white--text">
+          {{ new Date().getFullYear() }} — <strong>Applied Data Analysis (ADA) - EPFL</strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
@@ -39,6 +67,8 @@ export default {
   data(){
     return{
       showBar: false,
+      linkedin:
+        'mdi-linkedin',
     }
   },
   created () {
@@ -145,5 +175,8 @@ export default {
 }
 .topnav-right a:hover{
   color: black;
+}
+ul {
+  margin: 0;
 }
 </style>
