@@ -48,7 +48,7 @@
       </div>
       Taking a closer look, we realize that 13% of our misclassified politicians have only one quote associated. Here's a graph of speaker predictions with only 1 quote. (like on the previous graph you can mouse over quotes to see what they say):<br>
       <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed" height="525" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/25.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
       Among these quotes, we can notice 4 types of quotes:
       <ul style="padding-left: 50px">
@@ -115,7 +115,7 @@
     margin-left: auto;padding: 10px 15px 75px;max-width: 850px;">
       Finally lets show the political score of some of the most famous american politicians:
       <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed" height="525" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/42.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
     </div>
     <UseModel id="model"/>
@@ -147,7 +147,7 @@
     </div>
     <div class="col-12" style="margin-right: auto;
     margin-left: auto;padding: 0px 15px 75px;max-width: 1000px;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/44.embed" height="525" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/44.embed?showlink=false" height="525" width="100%"></iframe>
       <br>
     </div>
     <div class="col-12" style="margin-right: auto;
@@ -168,7 +168,7 @@
       </ul>
       We then show a sample of the quotes that are within that interval.<br>
       <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/46.embed" height="525" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/46.embed?showlink=false" height="525" width="100%"></iframe>
       </div><br>
       INTERVAL1 QUOTE: (e.g. "there are scientist that thinks a lot of different things about climat change. There are some who thinks we are warming, some thinks we are cooling, some thinks we are stable. ...")<br>
       INTERVAL2 QUOTE: (e.g. "whether it's hot or cold, the enemy is there,as far as liberals are concerned. That's why climate change is the perfect enemy ...")<br>
@@ -180,7 +180,7 @@
 
       Finally, we plot the average political score of the politicians by averaging their quotes. This allows us to see where a politician stands on the subject and how divided a party is. The democratic party tends to all agree that climate change exists and that we should act on it. On the other hand, Republicans are divided on the subject. Some tend to agree with democrats, and others strongly disagree and deny their existence.<br>
       <div style="width: 100%;margin: 0 auto;">
-        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed" height="525" width="100%"></iframe>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/48.embed?showlink=false" height="525" width="100%"></iframe>
       </div>
       <h4>Topic specific analysis: Abortion </h4>
       Let's look now at a topic where democrats and republicans are strongly divided: abortion.<br>
@@ -189,9 +189,9 @@
         <img  width="60%" :src="require('@/assets/images_nicky/img_1.jpeg')" alt="distribution"/>
       </div>
       <div style="width: 100%;margin: 0 auto;">
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed" height="525" width="100%"></iframe></div><br>
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/55.embed?showlink=false" height="525" width="100%"></iframe></div><br>
       <div style="width: 100%;margin: 0 auto;">
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/53.embed" height="525" width="100%"></iframe></div><br>
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/53.embed?showlink=false" height="525" width="100%"></iframe></div><br>
 
       Here we can see that the parties are strongly divided, the political scores of the republicans and democrats quotes are polarized around 0 and 1 respectively. Around the median, which in this case more or less represents the general opinion of the party (see distribution) we see that republicans tend to be anti-abortion whereas democrats tend to be pro-abortion.<br>
       By showing the quotes along the political score axis, we see the typical scores in all the intervals:<br>
@@ -201,7 +201,7 @@
       INTERVAL4 QUOTE: (e.g. "... it's time to pass state laws to protect womans 's constitutional right of abortion...")<br>
       We see once again, that the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion (which should not be surprising).<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided. We also see that there are more quotation of rebublicans that are simultaneously containing the words abortion and law.<br>
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed" height="525" width="100%"></iframe>
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed?showlink=false" height="525" width="100%"></iframe>
       <h4>What comes next?</h4>
       First the ADA exam. Then, we can start thinking about the various improvements needed:
       <ul style="padding-left: 50px">
