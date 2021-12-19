@@ -201,7 +201,9 @@
       Once more, the trend is the following: the lower the political score, the more a quote is anti-abortion. Whereas the higher the political score, the more a quote is pro-abortion (which should not be surprising).<br>
       Finally plotting the average political score of the politicians, we see that democrats and republicans are strongly divided. We also see that there are more quotation of rebublicans that are simultaneously containing the words abortion and law.<br>
       <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~ogim/57.embed?showlink=false" height="525" width="100%"></iframe>
-      <h4>What comes next?</h4>
+      
+      <h4>Nice! But what comes next?</h4>
+      We are very satisfied with the results achieved, being our first real experience of natural language processing. But what comes next?<br>
       First the ADA exam. Then, we can start thinking about the various improvements needed:
       <ul style="padding-left: 50px">
         <li>Including word embedding (eg: glove embedding)</li>
