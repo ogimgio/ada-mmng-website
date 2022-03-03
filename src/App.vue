@@ -45,7 +45,7 @@
           <div style="text-align: left">Mauro Leidi<v-btn class="white--text" icon href="https://www.linkedin.com/in/mauroleidi/"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
             <v-btn class="white--text" icon href="https://github.com/MauroLeidi"><v-icon size="24px">mdi-github</v-icon></v-btn>
             <br></div>
-          <div style="text-align: left">Micheal Roust<v-btn class="white--text" icon href="https://www.linkedin.com/in/michael-roust-aba804b9"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
+          <div style="text-align: left">Michael Roust<v-btn class="white--text" icon href="https://www.linkedin.com/in/michaelroust"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
             <v-btn class="white--text" icon href="https://github.com/michaelroust"><v-icon size="24px">mdi-github</v-icon></v-btn>
             <br></div>
           <div style="text-align: left">Nicolas Baldwin<v-btn class="white--text" icon href="https://www.linkedin.com/in/nicolas-baldwin-75832017b/"><v-icon size="24px">{{linkedin}}</v-icon></v-btn>
